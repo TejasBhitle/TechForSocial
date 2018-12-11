@@ -11,4 +11,5 @@ Clone this repository
 
 ### Backend
 1. `cd backend`
-2. Run `python3 manage.py runserver`
+2. Now install the dependencies `pip3 install -r requirements.txt`
+3. Start the server `python3 manage.py runserver`
