@@ -1,0 +1,299 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~owl.carousel/dist/assets/owl.carousel.css";
+@import "~owl.carousel/dist/assets/owl.theme.default.css";
+body{
+    font-family: 'Roboto', 'sans-serif';
+    font-size: 18px;
+    line-height: 22px;
+    color: #369DC8;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #ffffff;
+}
+.heading{
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 35px;
+    margin: 0px 0px 20px 70px;
+    padding: 0;
+    display: block;
+    text-align: center;
+}
+.pull-left{
+    float: left;
+}
+.pull-right{
+    float: right;
+}
+.projects-wrapper{
+    margin: 0px 30px 30px 30px;
+    /* width: 78%; */
+}
+.projects{
+    height: 135px;
+    margin-bottom: 37px;
+    background-color: #E6E6E6;
+    box-shadow: 0px 20px 10px -10px #797371;
+}
+#project1{
+    margin-top: 45px;
+}
+#project2{
+    box-shadow: 15px 20px 10px -10px #797371;
+}
+.text-title{
+    font-weight: 600;
+    font-size: 27px;
+    display: block;
+    margin-bottom: 10px;
+    color: #010000;; 
+}
+.text{
+    padding-top: 15px;
+    width: 64%;
+    color: #484848;
+}
+.text-data{
+    padding-left: 12px;
+    padding-right: 5px;
+}
+.image{
+    width: 36%;
+    /*background-image: url("C:\Users\ARTI\Pictures\2008-12\img3.JPG");*/
+    height: 100%;
+    background-repeat: no-repeat;
+}
+.image-url{
+    /*background-image: url("C:\Users\ARTI\Pictures\2008-12\img2.JPG");*/
+}
+.learn-more{
+    margin-top: 5px;
+    display: block;
+    color: #010000;
+    text-decoration: underline;
+}
+.news-wrapper{
+    color: #010000;
+    /* width: 20%; */
+    background-color: #E6E6E6;
+    margin:  45px 30px 20px 0px;
+    height: 480px;
+}
+.news-heading{
+    padding-top: 15px;
+}
+.news-text{
+    padding: 5px 10px 0px 20px;
+}
+.news-line{
+    display: block;
+    margin-bottom: 11px;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    line-height: 30px;     
+}
+.clear-float{
+    overflow: auto;
+}
+.clear-float::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/*Nav Section*/
+.nav-wrapper{
+    display: inline-block;
+    width: 100%;
+   font-weight: 500;
+    line-height: 75px;
+    background: #ffffff;
+    color: #010000;
+    height: 75px;
+    position: fixed;
+    z-index: 999;
+    /* margin-bottom: 20px !important;    */
+}
+.nav-wrapper,
+.nav-wrapper .nav-details{
+    margin: 0;
+    padding: 0px;
+}
+.nav-wrapper ul li{
+    display: inline;
+    margin: 0 10px;
+}
+.nav-wrapper .nav-details li a{
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #010000;
+}
+.nav-wrapper .nav-details li a:hover{
+    background-color: #71716F;
+    padding: 10px;
+    border-radius: 15px;
+    text-decoration-line: none;
+    color: #ffffff;
+}
+.logo{
+    margin-left: 20px;
+    margin-right: 350px;
+    text-transform: uppercase;
+    background-color: #369DC8;
+    color: #ffffff;
+    border-radius: 100%;
+    line-height: 50px;
+    padding: 5px;
+    margin-top: 7px;
+}   
+.description-heading{
+    padding-top: 50px;
+}
+.description-wrapper{
+    max-width: 100%;
+    margin: 40px 30px 70px 30px;
+    word-spacing: 3px;
+    max-height: 250px;
+    font-size: 22px;
+    letter-spacing: 1px;
+    line-height: 25px;
+    font-weight: 400;
+    padding-left: 15px;
+}
+.descriptionss{
+    background-color: #E6E6E6;
+    height: 200px;
+}
+.description-image{
+    width: 36%;
+    /*background-image: url("C:\Users\ARTI\angularProj\tech\src\app\description\picture.PNG");*/
+    height: 100%;
+    background-repeat: no-repeat;
+}
+.description-text{
+    padding-left: 15px;
+    padding-right: 30px;
+}
+
+/*Carousel section*/
+
+.carousel-wrapper{
+    margin-top: 20px;
+}
+/*media queries*/
+@media(max-width: 1199px){
+    .projects{
+        height: 180px;
+        margin-bottom: 70px;
+    }
+    .description-wrapper{
+        margin: 20px 25px;
+        word-spacing: 2px;
+        height: 300px;
+        font-size: 18px;
+        letter-spacing: 0.5px;
+        line-height: 25px;
+        font-weight: 400;
+        padding-left: 7px;
+    }
+    .news-wrapper{
+        width: 20%;
+        height: 700px;
+        font-size: 20px;
+    }
+    .projects-wrapper{
+        width: 70%;
+        font-size: 20px;
+        line-height: 22px;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px){
+    .projects{
+        height: 175px;
+    }
+    .news-wrapper{
+        width: 20%;
+        height: 700px;
+        font-size: 15px;
+        padding: 5px 8px 0px 10px;
+    }
+    .projects-wrapper{
+        width: 60%;
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .news-heading{
+        font-size: 30px;
+        text-align: center;
+    }
+}
+@media (min-width: 350px) and  (max-width: 767px ){
+    .projects{
+        height: 200px;
+        
+    }
+    body{
+        font-size: 15px;
+    }
+    .description-wrapper{
+        margin: 8px 5px;
+        height: 450px;
+        font-size: 13px;
+        line-height: 15px;
+        font-weight: 100;
+    
+    }
+    .description-text{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .news-wrapper{
+        width: 95%;
+        height: 400px;
+        font-size: 18px;
+        padding: 5px 8px 0px 10px;
+        margin: 8px 5px;
+       
+    }
+    .projects-wrapper{
+        width: 100%;
+        font-size: 20px;
+        line-height: 22px;
+        margin: 8px 5px;
+    }
+    .heading{
+        font-size: 30px;
+    }
+}
+@media (max-width: 343px){
+    .description-wrapper{
+        margin: 2px 0px;
+        height: 470px;
+        font-size: 12px;
+        line-height: 15px;
+        font-weight: 100;
+    }
+    .description-text{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .news-wrapper{
+        width: 95%;
+        height: 400px;
+        font-size: 18px;
+        padding: 5px 8px 0px 10px;
+        margin: 8px 5px;
+       
+    }
+    .projects-wrapper{
+        width: 100%;
+        font-size: 18px;
+        line-height: 19px;
+        margin: 8px 5px;
+    }
+}
