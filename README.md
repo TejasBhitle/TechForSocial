@@ -12,4 +12,10 @@ Clone this repository
 ### Backend
 1. `cd backend`
 2. Now install the dependencies `pip3 install -r requirements.txt`
-3. Start the server `python3 manage.py runserver`
+3. Now activate the virtual enviroment `source backend_venv/bin/activate`
+4. `cd backend_src`
+5. Start the server `python3 manage.py runserver`
+
+#### Other Instructions
+1. After installing any new dependencies using pip3, run `pip3 freeze > requirements.txt` in backend directory. This command will update the existing requirements.txt with the newly installed dependencies.
+2. To deactivate virtual enviroment, run `deactivate`.
