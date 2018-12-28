@@ -5,7 +5,6 @@ __pycache__/
 *.pyc
 *.pyo
 .installed.cfg
-bin
 develop-eggs
 dist
 downloads
