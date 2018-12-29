@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'People',
     'projects',
-    
+    'Publications',
     # third party
     'rest_framework',
     
