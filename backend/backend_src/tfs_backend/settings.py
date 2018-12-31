@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'Publications',
     # third party
     'rest_framework',
-    
+    'updates'
 
 ]
 
