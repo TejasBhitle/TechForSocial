@@ -4,28 +4,62 @@ from django.shortcuts import get_object_or_404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from .models import ActiveProject, PastProject
-from .serializers import ActiveProjectSerializer, PastProjectSerializer
+from . import models
+from .models import ActiveProject
+from .serializers import ActiveProjectSerializer
 from rest_framework import generics
 # Create your views here.
 
 
-class ProjectList(generics.ListCreateAPIView):
-    queryset = ActiveProject.objects.all()
+class ProjectList(generics.ListAPIView):
+    queryset = models.ActiveProject.objects.filter(is_past=False)
     serializer_class = ActiveProjectSerializer
 
 
-class ProjectDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = ActiveProject.objects.all()
+class ProjectCreate(generics.CreateAPIView):
+    queryset = models.ActiveProject.objects.filter()
     serializer_class = ActiveProjectSerializer
 
 
-class PastProjectList(generics.ListCreateAPIView):
-    queryset = PastProject.objects.all()
-    serializer_class = PastProjectSerializer
+class ProjectDetail(generics.RetrieveAPIView):
+    queryset = models.ActiveProject.objects.filter()
+    serializer_class = ActiveProjectSerializer
 
 
-class PastProjectDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = PastProject.objects.all()
-    serializer_class = PastProjectSerializer
+class ProjectDelete(generics.DestroyAPIView):
+    queryset = models.ActiveProject.objects.filter()
+    serializer_class = ActiveProjectSerializer
+
+
+class ProjectUpdate(generics.UpdateAPIView):
+    queryset = models.ActiveProject.objects.filter()
+    serializer_class = ActiveProjectSerializer
+
+
+class PastProjectList(generics.ListAPIView):
+    queryset = models.ActiveProject.objects.filter(is_past=True)
+    serializer_class = ActiveProjectSerializer
+
+
+class PastProjectCreate(generics.CreateAPIView):
+    queryset = models.ActiveProject.objects.filter()
+    serializer_class = ActiveProjectSerializer
+
+
+class PastProjectDetail(generics.RetrieveAPIView):
+    queryset = models.ActiveProject.objects.filter()
+    serializer_class = ActiveProjectSerializer
+
+
+class PastProjectDelete(generics.DestroyAPIView):
+    queryset = models.ActiveProject.objects.filter()
+    serializer_class = ActiveProjectSerializer
+
+
+class PastProjectUpdate(generics.UpdateAPIView):
+    queryset = models.ActiveProject.objects.filter()
+    serializer_class = ActiveProjectSerializer
+
+
+
 
