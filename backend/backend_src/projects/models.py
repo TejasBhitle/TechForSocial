@@ -29,20 +29,13 @@ class ActiveProject(models.Model):
     project_paper = models.ManyToManyField(Papers, related_name='project_paper', blank= True)
     project_team = models.ManyToManyField(DummyPeopleModel, related_name='project_team')
     project_join_us = models.CharField(max_length=1000)
+    project_photo = models.ImageField(blank=True)
+    project_context = models.CharField(max_length=1000, blank=True)
+    is_past = models.BooleanField()
 
     def __str__(self):
         return self.project_name
 
 
-class PastProject(models.Model):
-    past_project_name = models.CharField(max_length=30, default='Unnamed Project')
-    past_project_abstract = models.CharField(max_length=1000, default= 'Does not Exit')
-    past_project_paper = models.ManyToManyField(Papers, related_name='past_project_paper', blank=True)
-    past_project_team = models.ManyToManyField(DummyPeopleModel, related_name='past_project_team')
-    past_project_join_us = models.CharField(max_length=1000, blank=True)
-    past_project_photo = models.ImageField(blank=True)
-    past_project_context = models.CharField(max_length=1000, blank=True)
 
-    def __str__(self):
-        return self.past_project_name
 
