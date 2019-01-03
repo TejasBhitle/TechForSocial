@@ -1,6 +1,4 @@
 import { carouselComponent } from './carousel/app.carouselComponent';
-import { descriptionComponent } from './description/app.descriptionComponent';
-import { navbarComponent } from './navbar/app.navbarComponent';
 import { OwlModule } from 'ngx-owl-carousel';
 import { CourseComponent } from './course/course.component';
 import { Component } from '@angular/core';

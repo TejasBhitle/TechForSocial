@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NewsService } from './news.service'
+import { APIService } from './../api.service'
 import { News } from './news'
 
 @Component({
@@ -11,10 +11,10 @@ export class NewsComponent implements OnInit{
 
   news : News[] = [];
 
-  constructor(private newsService: NewsService) { }
+  constructor(private apiService: APIService) { }
 
   ngOnInit(){
-    this.newsService.getNews()
+    this.apiService.getNews()
     .subscribe(
       (response) => {
         let data = JSON.stringify(response);

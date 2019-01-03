@@ -1,35 +1,58 @@
-import { carouselComponent } from './carousel/app.carouselComponent';
-import { descriptionComponent } from './description/app.descriptionComponent';
-import { navbarComponent } from './navbar/app.navbarComponent';
-import { CourseComponent } from './course/course.component';
+/*Modules*/
+import { NgModule } from '@angular/core'; 
+import { RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
-import { NgModule } from '@angular/core'; 
-
+/*Components*/
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HomeComponent } from './home/home.component';
 import { NewsComponent } from './news/news.component';
+import { carouselComponent } from './carousel/app.carouselComponent';
+import { CourseComponent } from './course/course.component';
+import { ProjectComponent } from './project/project.component';
+import { PeopleComponent } from './people/people.component';
+import { PublicationComponent } from './publication/publication.component';
+import { FaqComponent } from './faq/faq.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { AdminComponent } from './admin/admin.component';
+import { ReleasesComponent } from './releases/releases.component';
 
-import { NewsService } from './news/news.service';
+/*Services*/
+import { APIService } from './api.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     CourseComponent,
-    navbarComponent,
-    descriptionComponent,
     carouselComponent,
-    NewsComponent
+    NewsComponent,
+    HomeComponent,
+    ProjectComponent,
+    PeopleComponent,
+    PublicationComponent,
+    FaqComponent,
+    NavbarComponent,
+    AdminComponent,
+    ReleasesComponent,
   ],
   imports: [
     BrowserModule, 
     NgbModule,
     HttpClientModule,
-   
+    RouterModule.forRoot([
+      {path:'',component:HomeComponent},
+      {path:'projects', component: ProjectComponent},
+      {path:'people',component: PeopleComponent},
+      {path:'publications', component: PublicationComponent},
+      {path:'faq', component: FaqComponent},
+      {path: 'releases', component: ReleasesComponent},
+      {path:'admin', component: AdminComponent}
+    ])
   ],
   providers: [
-    NewsService
+    APIService
   ],
   bootstrap: [AppComponent]
 })
