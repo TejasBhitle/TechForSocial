@@ -1,25 +1,36 @@
- import { carouselComponent } from './carousel/app.carouselComponent';
+import { carouselComponent } from './carousel/app.carouselComponent';
 import { descriptionComponent } from './description/app.descriptionComponent';
 import { navbarComponent } from './navbar/app.navbarComponent';
-import { courseComponent } from './courses/app.courseComponent';
+import { CourseComponent } from './course/course.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+
 import { NgModule } from '@angular/core'; 
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NewsComponent } from './news/news.component';
+
+import { NewsService } from './news/news.service';
+
 @NgModule({
   declarations: [
     AppComponent,
-    courseComponent,
+    CourseComponent,
     navbarComponent,
     descriptionComponent,
-     carouselComponent
+    carouselComponent,
+    NewsComponent
   ],
   imports: [
-    BrowserModule , NgbModule
+    BrowserModule, 
+    NgbModule,
+    HttpClientModule,
    
   ],
-  providers: [],
+  providers: [
+    NewsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

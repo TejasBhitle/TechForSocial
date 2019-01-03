@@ -40,10 +40,12 @@ INSTALLED_APPS = [
     'People',
     'projects',
     'Publications',
+    'updates',
+
+
     # third party
     'rest_framework',
-    'updates'
-
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -54,7 +56,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # third party
+    'corsheaders.middleware.CorsMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'tfs_backend.urls'
 
