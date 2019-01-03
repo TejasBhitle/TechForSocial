@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NewsComponent } from './news/news.component';
-import { carouselComponent } from './carousel/app.carouselComponent';
+import { CarouselComponent } from './carousel/carousel.component';
 import { CourseComponent } from './course/course.component';
 import { ProjectComponent } from './project/project.component';
 import { PeopleComponent } from './people/people.component';
@@ -26,7 +26,7 @@ import { APIService } from './api.service';
   declarations: [
     AppComponent,
     CourseComponent,
-    carouselComponent,
+    CarouselComponent,
     NewsComponent,
     HomeComponent,
     ProjectComponent,

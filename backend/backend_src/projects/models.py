@@ -1,8 +1,5 @@
 from django.db import models
 
-# Create your models here.
-
-
 class Papers(models.Model):
 
     paper_title = models.CharField(max_length=200)

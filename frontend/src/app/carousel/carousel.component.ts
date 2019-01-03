@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 @Component({
-  selector: 'app-slider',
-  templateUrl: './caraousel.html',
-  styleUrls: ['./carousel.css'],
+  selector: 'carousel',
+  templateUrl: './carousel.component.html',
+  styleUrls: ['./carousel.component.css'],
   providers: [ NgbCarouselConfig ]
 })
-export class carouselComponent implements OnInit {
+export class CarouselComponent implements OnInit {
 
   constructor(config: NgbCarouselConfig) {
     // customize default values of carousels used by this component tree
