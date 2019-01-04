@@ -25,6 +25,6 @@ urlpatterns = [
     path('projects/', include('projects.urls')),
     path('work/', include('Publications.urls')),
     path('updates/', include('updates.urls')),
-
+    path('faqs/', include('faq.urls')),
 ]
-urlpatterns+= static(MEDIA_URL,document_root=MEDIA_URL)
+urlpatterns += static(MEDIA_URL, document_root=MEDIA_URL)

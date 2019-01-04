@@ -41,11 +41,11 @@ INSTALLED_APPS = [
     'projects',
     'Publications',
     'updates',
-
+    'faq',
 
     # third party
     'rest_framework',
-    'corsheaders'
+    'corsheaders', # for handling CORS issue
 ]
 
 MIDDLEWARE = [
@@ -61,6 +61,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
+# for handling CORS issue
 CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'tfs_backend.urls'

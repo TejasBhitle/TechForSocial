@@ -13,4 +13,9 @@ export class APIService {
   getNews(){
     return this.http.get(this.BASE_URL+'/updates/news/')
   }
+
+  getFaqs(){
+    return this.http.get(this.BASE_URL+'/faqs/')
+  }
+  
 }
