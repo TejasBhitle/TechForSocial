@@ -19,6 +19,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AdminComponent } from './admin/admin.component';
 import { ReleasesComponent } from './releases/releases.component';
 
+/*Admin components */
+import { NewsAdminComponent } from './admin/news-admin/news-admin.component';
+import { FaqsAdminComponent } from './admin/faqs-admin/faqs-admin.component';
+
 /*Services*/
 import { APIService } from './api.service';
 
@@ -36,6 +40,8 @@ import { APIService } from './api.service';
     NavbarComponent,
     AdminComponent,
     ReleasesComponent,
+    NewsAdminComponent,
+    FaqsAdminComponent,
   ],
   imports: [
     BrowserModule, 
@@ -47,8 +53,21 @@ import { APIService } from './api.service';
       {path:'people',component: PeopleComponent},
       {path:'publications', component: PublicationComponent},
       {path:'faq', component: FaqComponent},
-      {path: 'releases', component: ReleasesComponent},
-      {path:'admin', component: AdminComponent}
+      {path:'releases', component: ReleasesComponent},
+      {
+        path:'admin', 
+        component: AdminComponent, 
+        children: [
+          {
+            path: 'news',
+            component: NewsAdminComponent
+          },
+          {
+            path: 'faqs',
+            component: FaqsAdminComponent
+          },
+        ]
+      }
     ])
   ],
   providers: [
