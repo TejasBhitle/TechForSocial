@@ -3,7 +3,7 @@
 @import "~owl.carousel/dist/assets/owl.carousel.css";
 @import "~owl.carousel/dist/assets/owl.theme.default.css";
 body{
-    font-family: 'Roboto', 'sans-serif';
+    font-family: 'Work Sans', sans-serif;
     font-size: 18px;
     line-height: 22px;
     color: #369DC8;
@@ -20,6 +20,7 @@ body{
     padding: 0;
     display: block;
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
 }
 .pull-left{
     float: left;
@@ -48,7 +49,8 @@ body{
     font-size: 27px;
     display: block;
     margin-bottom: 10px;
-    color: #010000;; 
+    color: #010000;
+    font-family: 'Montserrat', sans-serif;
 }
 .text{
     padding-top: 15px;
@@ -57,7 +59,8 @@ body{
 }
 .text-data{
     padding-left: 12px;
-    padding-right: 5px;
+    padding-right: 12px;
+    text-align: justify;
 }
 .image{
     width: 36%;
@@ -70,9 +73,14 @@ body{
 }
 .learn-more{
     margin-top: 5px;
-    display: block;
+    /* display: block; */
     color: #010000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.learn-more:hover{
     text-decoration: underline;
+    color: #010000;
 }
 .news-wrapper{
     color: #010000;
@@ -306,6 +314,12 @@ body{
     width: 150px;
     height: 5px;
     background: white;
+    margin: 15px auto 0px;
+}
+.content-title-underline-black{
+    width: 150px;
+    height: 5px;
+    background: #5E5E5E;
     margin: 15px auto 0px;
 }
 .small-bottom-mrg{
