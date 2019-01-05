@@ -4,6 +4,7 @@
 }
 .contact-form{
     color: #369DC8;
+    padding-left: 80px;
 }
 .small-bottom-mrg{
     margin-bottom: 10px;
@@ -24,4 +25,15 @@
 }
 .address{
     color: white;
+}
+.address p span{
+    color: #369DC8;
+}
+.footer-bottom{
+    background-color: #369DC8;
+    color: white;
+    text-align: center;
+}
+.footer-bottom p{
+    margin-bottom: 0px;
 }
