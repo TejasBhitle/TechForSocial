@@ -10,7 +10,7 @@ export class CarouselComponent implements OnInit {
 
   constructor(config: NgbCarouselConfig) {
     // customize default values of carousels used by this component tree
-    config.interval = 2000;
+    config.interval = 4000;
     config.wrap = true;
     config.keyboard = false;
     config.pauseOnHover = false;
