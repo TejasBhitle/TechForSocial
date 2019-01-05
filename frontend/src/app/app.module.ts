@@ -25,6 +25,7 @@ import { FaqsAdminComponent } from './admin/faqs-admin/faqs-admin.component';
 
 /*Services*/
 import { APIService } from './api.service';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { APIService } from './api.service';
     ReleasesComponent,
     NewsAdminComponent,
     FaqsAdminComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule, 

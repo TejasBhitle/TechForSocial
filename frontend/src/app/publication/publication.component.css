@@ -1,0 +1,18 @@
+.publication-wrapper{
+    padding: 0 50px;
+}
+.publication-heading-border{
+    border-right: solid 2px black;
+
+}
+.publication-heading-wrapper{
+    padding: 5px;
+    text-align: center;
+}
+.publication-year-text{
+    color: black;
+    letter-spacing: 0.5px;
+}
+hr{
+    height:2px;border:none;color:#333;background-color:#333;
+}

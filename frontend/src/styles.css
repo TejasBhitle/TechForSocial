@@ -16,7 +16,7 @@ body{
     font-size: 40px;
     font-weight: 700;
     line-height: 35px;
-    margin: 0px 0px 20px 70px;
+    /* margin: 0px 0px 20px 70px; */
     padding: 0;
     display: block;
     text-align: center;
@@ -61,12 +61,12 @@ body{
 }
 .image{
     width: 36%;
-    /*background-image: url("C:\Users\ARTI\Pictures\2008-12\img3.JPG");*/
+    background-image: url("assets/img/img3.jpg");
     height: 100%;
     background-repeat: no-repeat;
 }
 .image-url{
-    /*background-image: url("C:\Users\ARTI\Pictures\2008-12\img2.JPG");*/
+    background-image: url("assets/img/img2.jpg");
 }
 .learn-more{
     margin-top: 5px;
@@ -178,6 +178,8 @@ body{
 .description-text{
     padding-left: 15px;
     padding-right: 30px;
+    padding-top: 15px;
+    color: #484848;
 }
 
 /*Carousel section*/
@@ -296,4 +298,31 @@ body{
         line-height: 19px;
         margin: 8px 5px;
     }
+}
+
+
+/* GENERAL PADDING MARGIN SECTION */
+.content-title-underline-white{
+    width: 150px;
+    height: 5px;
+    background: white;
+    margin: 15px auto 0px;
+}
+.small-bottom-mrg{
+    margin-bottom: 10px;
+}
+.small-top-mrg{
+    margin-top: 30px;
+}
+.pdg-top{
+    padding-top: 50px;
+}
+.pdg-bottom{
+    padding-bottom: 50px;
+}
+.pdg-sm-top{
+    padding-top: 25px;
+}
+.pdg-xs-top{
+    padding-top: 15px;
 }

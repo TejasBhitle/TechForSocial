@@ -1,0 +1,27 @@
+.footer-wrapper{
+    background-color: black;
+    padding-bottom: 15px;
+}
+.contact-form{
+    color: #369DC8;
+}
+.small-bottom-mrg{
+    margin-bottom: 10px;
+}
+.btn-blue{
+    color: white;
+    background-color: #369DC8;
+    border: solid 3px #369DC8;
+}
+.btn-blue:focus,
+.btn-blue:hover{
+    border: solid 3px #369DC8;
+    background-color: white;
+    color: #369DC8;
+}
+.map{
+    border: solid 2px white;
+}
+.address{
+    color: white;
+}
