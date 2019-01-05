@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule }   from '@angular/forms';
 
 /*Components*/
 import { AppComponent } from './app.component';
@@ -47,8 +48,9 @@ import { FooterComponent } from './footer/footer.component';
   ],
   imports: [
     BrowserModule, 
-    NgbModule,
+    NgbModule.forRoot(),
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot([
       {path:'',component:HomeComponent},
       {path:'projects', component: ProjectComponent},

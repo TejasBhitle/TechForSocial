@@ -118,7 +118,6 @@ body{
     border-radius: 10px;
 }
 .founder-name{
-    text-transform: uppercase;
     color: #369DC8;
     font-size: 35px;
     text-align: center;
@@ -159,7 +158,6 @@ body{
     margin: 30px auto;
 }
 .student-name{
-        text-transform: uppercase;
         color: #369DC8;
         font-size: 25px;
         text-align: center;
