@@ -328,14 +328,23 @@ body{
 .small-bottom-mrg{
     margin-bottom: 10px;
 }
+.medium-bottom-mrg{
+    margin-bottom: 25px;
+}
 .small-top-mrg{
     margin-top: 30px;
+}
+.xs-top-margin{
+    margin-top: 15px;
 }
 .pdg-top{
     padding-top: 50px;
 }
 .pdg-bottom{
     padding-bottom: 50px;
+}
+.big-bottom-mrg{
+    margin-bottom: 50px;
 }
 .pdg-sm-top{
     padding-top: 25px;

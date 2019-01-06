@@ -5,7 +5,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule }   from '@angular/forms';
-
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 /*Components*/
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -53,6 +53,7 @@ import { JoinUsComponent } from './join-us/join-us.component';
     NgbModule.forRoot(),
     HttpClientModule,
     FormsModule,
+    AngularFontAwesomeModule,
     RouterModule.forRoot([
       {path:'',component:HomeComponent},
       {path:'projects', component: ProjectComponent},

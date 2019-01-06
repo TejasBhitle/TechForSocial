@@ -12,7 +12,11 @@ export class FaqComponent implements OnInit {
   faqs : FAQ[] = []
 
   constructor(private apiService: APIService) { }
-
+  isHidden1 = true;
+  isHidden2 = true;
+  isHidden3 = true;
+  isHidden4 = true;
+  isHidden5 = true;
   ngOnInit(){
     this.apiService.getFaqs()
     .subscribe(
