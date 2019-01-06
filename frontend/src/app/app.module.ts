@@ -27,6 +27,7 @@ import { FaqsAdminComponent } from './admin/faqs-admin/faqs-admin.component';
 /*Services*/
 import { APIService } from './api.service';
 import { FooterComponent } from './footer/footer.component';
+import { JoinUsComponent } from './join-us/join-us.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { FooterComponent } from './footer/footer.component';
     NewsAdminComponent,
     FaqsAdminComponent,
     FooterComponent,
+    JoinUsComponent,
   ],
   imports: [
     BrowserModule, 
