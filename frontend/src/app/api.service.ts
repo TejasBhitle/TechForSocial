@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 
 import { News } from './news/news';
+import { FAQ } from './faq/faq';
 
 @Injectable({
   providedIn: 'root'
@@ -21,9 +22,6 @@ export class APIService {
     const httpOptions = {
       headers: new HttpHeaders()
     };
-
-    console.log(news)
-    console.log(isUpdateMode)
 
     if(isUpdateMode){
       let id = news.id
@@ -48,6 +46,32 @@ export class APIService {
 
   getFaqs(){
     return this.http.get(this.BASE_URL+'/faqs/')
+  }
+
+  createOrUpdateFAQ(faq: FAQ, isUpdateMode: boolean){
+    const httpOptions = {
+      headers: new HttpHeaders()
+    };
+
+    if(isUpdateMode){
+      let id = faq.id
+      return this.http.put(
+        this.BASE_URL+'/faqs/update/'+id,
+        faq,
+        httpOptions
+      )
+    }
+    else{
+      return this.http.post(
+        this.BASE_URL+'/faqs/create/',
+        faq,
+        httpOptions
+      )
+    }
+  }
+
+  deleteFAQ(faq: FAQ){
+    return this.http.delete(this.BASE_URL+'/faqs/delete/'+faq.id)
   }
   
 }
