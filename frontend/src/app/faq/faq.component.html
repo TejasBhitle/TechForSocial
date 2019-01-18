@@ -1,6 +1,52 @@
-<ul>
+<!-- <ul>
   <li *ngFor="let faq of faqs">
     <p>{{faq.question}}</p>
     <p>{{faq.answer}}</p>
   </li>
-</ul>
+</ul> -->
+
+<div class="faq-wrapper">
+    <h1 class="heading">Frequently Asked Questions</h1>
+    <div class="content-title-underline-black big-bottom-mrg"></div>
+  <div class="faq-panel">
+      <div class="faq-question" (click)="isHidden1 = !isHidden1">
+        <h4>Q. Eu laborum eiusmod nostrud Lorem laboris et ??? <span class="fa fa-arrow-down faq-arrowicon" [hidden]="!isHidden1"></span><span class="fa fa-arrow-up faq-arrowicon" [hidden]="isHidden1"></span></h4>
+        
+      </div>
+      <div class="faq-answer faq-answer-grey" [hidden]="isHidden1">
+        <p>A. Dolor aliqua exercitation consequat ea minim cillum qui ad consequat sunt. Tempor consequat culpa occaecat sunt magna tempor laboris aliquip eu ex amet laborum. Quis eiusmod anim incididunt ea. Enim adipisicing in elit officia nulla esse voluptate adipisicing non aliqua est ea. Elit cupidatat reprehenderit nulla nisi reprehenderit voluptate adipisicing cillum consequat elit incididunt magna eu minim. Excepteur ex ullamco ea irure eu mollit id ad consectetur voluptate aliquip non ad.</p>
+      </div>
+  </div>
+  <div class="faq-panel">
+      <div class="faq-question faq-question-grey" (click)="isHidden2 = !isHidden2">
+        <h4>Q. Eu laborum eiusmod nostrud Lorem laboris et ??? <span class="fa fa-arrow-down faq-arrowicon" [hidden]="!isHidden2"></span><span class="fa fa-arrow-up faq-arrowicon" [hidden]="isHidden2"></span></h4>
+      </div>
+      <div class="faq-answer"[hidden]="isHidden2">
+        <p>A. Dolor aliqua exercitation consequat ea minim cillum qui ad consequat sunt. Tempor consequat culpa occaecat sunt magna tempor laboris aliquip eu ex amet laborum. Quis eiusmod anim incididunt ea. Enim adipisicing in elit officia nulla esse voluptate adipisicing non aliqua est ea. Elit cupidatat reprehenderit nulla nisi reprehenderit voluptate adipisicing cillum consequat elit incididunt magna eu minim. Excepteur ex ullamco ea irure eu mollit id ad consectetur voluptate aliquip non ad.</p>
+      </div>
+  </div>
+  <div class="faq-panel">
+      <div class="faq-question" (click)="isHidden3 = !isHidden3">
+        <h4>Q. Eu laborum eiusmod nostrud Lorem laboris et ??? <span class="fa fa-arrow-down faq-arrowicon" [hidden]="!isHidden3"></span><span class="fa fa-arrow-up faq-arrowicon" [hidden]="isHidden3"></span></h4>
+      </div>
+      <div class="faq-answer faq-answer-grey"[hidden]="isHidden3">
+        <p>A. Dolor aliqua exercitation consequat ea minim cillum qui ad consequat sunt. Tempor consequat culpa occaecat sunt magna tempor laboris aliquip eu ex amet laborum. Quis eiusmod anim incididunt ea. Enim adipisicing in elit officia nulla esse voluptate adipisicing non aliqua est ea. Elit cupidatat reprehenderit nulla nisi reprehenderit voluptate adipisicing cillum consequat elit incididunt magna eu minim. Excepteur ex ullamco ea irure eu mollit id ad consectetur voluptate aliquip non ad.</p>
+      </div>
+  </div>
+  <div class="faq-panel">
+      <div class="faq-question  faq-question-grey" (click)="isHidden4 = !isHidden4">
+        <h4>Q. Eu laborum eiusmod nostrud Lorem laboris et ??? <span class="fa fa-arrow-down faq-arrowicon" [hidden]="!isHidden4"></span><span class="fa fa-arrow-up faq-arrowicon" [hidden]="isHidden4"></span></h4>
+      </div>
+      <div class="faq-answer" [hidden]="isHidden4">
+        <p>A. Dolor aliqua exercitation consequat ea minim cillum qui ad consequat sunt. Tempor consequat culpa occaecat sunt magna tempor laboris aliquip eu ex amet laborum. Quis eiusmod anim incididunt ea. Enim adipisicing in elit officia nulla esse voluptate adipisicing non aliqua est ea. Elit cupidatat reprehenderit nulla nisi reprehenderit voluptate adipisicing cillum consequat elit incididunt magna eu minim. Excepteur ex ullamco ea irure eu mollit id ad consectetur voluptate aliquip non ad.</p>
+      </div>
+  </div>
+  <div class="faq-panel">
+      <div class="faq-question" (click)="isHidden5 = !isHidden5">
+        <h4>Q. Eu laborum eiusmod nostrud Lorem laboris et ??? <span class="fa fa-arrow-down faq-arrowicon" [hidden]="!isHidden5"></span><span class="fa fa-arrow-up faq-arrowicon" [hidden]="isHidden5"></span></h4>
+      </div>
+      <div class="faq-answer faq-answer-grey"[hidden]="isHidden5">
+        <p>A. Dolor aliqua exercitation consequat ea minim cillum qui ad consequat sunt. Tempor consequat culpa occaecat sunt magna tempor laboris aliquip eu ex amet laborum. Quis eiusmod anim incididunt ea. Enim adipisicing in elit officia nulla esse voluptate adipisicing non aliqua est ea. Elit cupidatat reprehenderit nulla nisi reprehenderit voluptate adipisicing cillum consequat elit incididunt magna eu minim. Excepteur ex ullamco ea irure eu mollit id ad consectetur voluptate aliquip non ad.</p>
+      </div>
+  </div>
+</div>

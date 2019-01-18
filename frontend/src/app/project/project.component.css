@@ -1,0 +1,20 @@
+.project-detail-card{
+    background-color: #E6E6E6;
+    /* padding-top: 10px; */
+    padding-bottom: 10px;
+    margin-right: 30px;
+    margin-bottom: 30px;  
+    padding-left: 0 !important;
+    padding-right: 0 !important;   
+}
+.detail-text{
+   padding:10px;
+}
+.detail-text p{
+    color: black;
+}
+.detail-text span{
+    color: black;
+    background-color: #369DC8;
+    margin: 3px;
+}

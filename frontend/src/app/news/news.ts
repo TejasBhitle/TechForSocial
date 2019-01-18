@@ -1,4 +1,4 @@
 export class News {
-    id: string
+    id? : string
     text: string
 }

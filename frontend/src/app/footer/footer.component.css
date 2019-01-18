@@ -1,0 +1,39 @@
+.footer-wrapper{
+    background-color: #5E5E5E;
+    padding-bottom: 15px;
+}
+.contact-form{
+    color: #369DC8;
+    padding-left: 80px;
+}
+.small-bottom-mrg{
+    margin-bottom: 10px;
+}
+.btn-blue{
+    color: white;
+    background-color: #369DC8;
+    border: solid 3px #369DC8;
+}
+.btn-blue:focus,
+.btn-blue:hover{
+    border: solid 3px #369DC8;
+    background-color: white;
+    color: #369DC8;
+}
+.map{
+    border: solid 2px white;
+}
+.address{
+    color: white;
+}
+.address p span{
+    color: #369DC8;
+}
+.footer-bottom{
+    background-color: #369DC8;
+    color: white;
+    text-align: center;
+}
+.footer-bottom p{
+    margin-bottom: 0px;
+}

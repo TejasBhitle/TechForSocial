@@ -3,7 +3,7 @@
 @import "~owl.carousel/dist/assets/owl.carousel.css";
 @import "~owl.carousel/dist/assets/owl.theme.default.css";
 body{
-    font-family: 'Roboto', 'sans-serif';
+    font-family: 'Work Sans', sans-serif;
     font-size: 18px;
     line-height: 22px;
     color: #369DC8;
@@ -16,10 +16,11 @@ body{
     font-size: 40px;
     font-weight: 700;
     line-height: 35px;
-    margin: 0px 0px 20px 70px;
+    /* margin: 0px 0px 20px 70px; */
     padding: 0;
     display: block;
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
 }
 .pull-left{
     float: left;
@@ -48,7 +49,8 @@ body{
     font-size: 27px;
     display: block;
     margin-bottom: 10px;
-    color: #010000;; 
+    color: #010000;
+    font-family: 'Montserrat', sans-serif;
 }
 .text{
     padding-top: 15px;
@@ -57,37 +59,49 @@ body{
 }
 .text-data{
     padding-left: 12px;
-    padding-right: 5px;
+    padding-right: 12px;
+    text-align: justify;
 }
 .image{
     width: 36%;
-    /*background-image: url("C:\Users\ARTI\Pictures\2008-12\img3.JPG");*/
+    background-image: url("assets/img/img3.jpg");
     height: 100%;
     background-repeat: no-repeat;
 }
 .image-url{
-    /*background-image: url("C:\Users\ARTI\Pictures\2008-12\img2.JPG");*/
+    background-image: url("assets/img/img2.jpg");
 }
 .learn-more{
     margin-top: 5px;
-    display: block;
+    /* display: block; */
     color: #010000;
-    text-decoration: underline;
+    text-decoration: none;
+    cursor: pointer;
 }
-.news-wrapper{
+.learn-more:hover{
+    text-decoration: underline;
+    color: #010000;
+}
+.joinus-wrapper{
     color: #010000;
     /* width: 20%; */
     background-color: #E6E6E6;
     margin:  45px 30px 20px 0px;
     height: 480px;
 }
-.news-heading{
+.joinus-heading{
     padding-top: 15px;
+    text-transform: uppercase;
+    color: #5E5E5E;
 }
-.news-text{
+.joinus-heading strong{
+    display: block;
+    color: black;
+}
+.joinus-text{
     padding: 5px 10px 0px 20px;
 }
-.news-line{
+.joinus-line{
     display: block;
     margin-bottom: 11px;
     letter-spacing: 0.5px;
@@ -178,6 +192,8 @@ body{
 .description-text{
     padding-left: 15px;
     padding-right: 30px;
+    padding-top: 15px;
+    color: #484848;
 }
 
 /*Carousel section*/
@@ -201,11 +217,8 @@ body{
         font-weight: 400;
         padding-left: 7px;
     }
-    .news-wrapper{
-        width: 20%;
-        height: 700px;
-        font-size: 20px;
-    }
+    
+    
     .projects-wrapper{
         width: 70%;
         font-size: 20px;
@@ -296,4 +309,59 @@ body{
         line-height: 19px;
         margin: 8px 5px;
     }
+}
+
+
+/* GENERAL PADDING MARGIN SECTION */
+.content-title-underline-white{
+    width: 150px;
+    height: 5px;
+    background: white;
+    margin: 15px auto 0px;
+}
+.content-title-underline-black{
+    width: 150px;
+    height: 5px;
+    background: #5E5E5E;
+    margin: 15px auto 0px;
+}
+.small-bottom-mrg{
+    margin-bottom: 10px;
+}
+.medium-bottom-mrg{
+    margin-bottom: 25px;
+}
+.small-top-mrg{
+    margin-top: 30px;
+}
+.xs-top-margin{
+    margin-top: 15px;
+}
+.pdg-top{
+    padding-top: 50px;
+}
+.pdg-bottom{
+    padding-bottom: 50px;
+}
+.big-bottom-mrg{
+    margin-bottom: 50px;
+}
+.pdg-sm-top{
+    padding-top: 25px;
+}
+.pdg-xs-top{
+    padding-top: 15px;
+}
+
+
+.btn-blue{
+    color: #5E5E5E;
+    background-color: #369DC8;
+    border: solid 3px #369DC8;
+}
+.btn-blue:focus,
+.btn-blue:hover{
+    border: solid 3px #369DC8;
+    background-color: white;
+    color: #369DC8;
 }

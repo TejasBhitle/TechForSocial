@@ -1,0 +1,19 @@
+.news-body{
+    margin-top: 40px;
+}
+.news-text p{
+    color: #5e5E5E;
+    text-align: justify;
+}
+.news-container{
+    /* opacity: 0.3; */
+    background-color: #E6E6E6;
+    padding: 0px !important;
+    margin: 20px;
+}
+.news-text{
+    padding: 15px;
+}
+.news-text a{
+    color: #5e5E5E; 
+}
