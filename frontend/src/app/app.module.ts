@@ -63,7 +63,8 @@ import { JoinUsComponent } from './join-us/join-us.component';
       {path:'releases', component: ReleasesComponent},
       {
         path:'admin', 
-        component: AdminComponent, 
+        component: AdminComponent,
+        data : { hide_navbar : true} ,
         children: [
           {
             path: 'news',
