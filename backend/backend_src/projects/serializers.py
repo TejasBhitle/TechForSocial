@@ -4,7 +4,7 @@ from .models import ActiveProject, DummyPeopleModel, Papers
 
 class ActiveProjectSerializer(serializers.ModelSerializer):
 
-    project_team = serializers.PrimaryKeyRelatedField(queryset=DummyPeopleModel.objects.all(), many=True)
+    # project_team = serializers.PrimaryKeyRelatedField(queryset=DummyPeopleModel.objects.all(), many=True)
     project_paper = serializers.PrimaryKeyRelatedField(queryset=Papers.objects.all(), many=True)
 
     class Meta:
