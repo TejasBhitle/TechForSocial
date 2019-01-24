@@ -24,9 +24,8 @@ export class APIService {
     };
 
     if(isUpdateMode){
-      let id = news.id
       return this.http.put(
-        this.BASE_URL+'/updates/news/update/'+id,
+        this.BASE_URL+'/updates/news/update/',
         news,
         httpOptions
       )
@@ -41,7 +40,7 @@ export class APIService {
   }
 
   deleteNews(news:News){
-    return this.http.delete(this.BASE_URL+'/updates/news/delete/'+news.id)
+    return this.http.delete(this.BASE_URL+'/updates/news/delete/')
   }
 
   getFaqs(){

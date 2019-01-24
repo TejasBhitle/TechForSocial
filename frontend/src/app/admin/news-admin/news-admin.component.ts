@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { News } from 'src/app/news/news';
 import { APIService } from 'src/app/api.service';
 import { NgForm } from '@angular/forms';
+import { FirebaseDbService } from 'src/app/firebase-db.service';
 
 @Component({
   selector: 'app-news-admin',
@@ -12,10 +13,10 @@ export class NewsAdminComponent implements OnInit {
 
   isUpdateMode: boolean = false
   isWriteView$: boolean = false
-  news: News[] = []
-  newsItem$ : News = { id:'', text:'' }
+  news= []
+  newsItem$ : News = {text:'' }
 
-  constructor(private apiService: APIService) { }
+  constructor(private apiService: APIService, private firebaseDb: FirebaseDbService) { }
 
   ngOnInit() {
     this.fetchNews()
@@ -50,16 +51,19 @@ export class NewsAdminComponent implements OnInit {
 
   submitForm(form: NgForm){
     let formNews : News = form.value
-    formNews.id = this.newsItem$.id
-    this.apiService.createOrUpdateNews(formNews,this.isUpdateMode)
-      .subscribe( res => console.log(res), err => console.log(err))
+    /*this.apiService.createOrUpdateNews(formNews,this.isUpdateMode)
+      .subscribe( res => console.log(res), err => console.log(err))*/
+    this.firebaseDb.createNews(formNews)
     this.goToReadView()
   }
 
   private fetchNews(){
-    this.apiService.getNews().subscribe( (res) => {
-      this.news = JSON.parse(JSON.stringify(res))
-    })
+    this.firebaseDb.getNews()/*.valueChanges().subscribe(
+      value => {
+        this.news = value
+        console.log(value) 
+      }
+    );*/
   }
 
   private goToReadView(){
@@ -68,7 +72,7 @@ export class NewsAdminComponent implements OnInit {
   }
 
   private resetFormItem(){
-    this.newsItem$ = { id:'', text:'' }
+    this.newsItem$ = {text:'' }
   }
 
 }

@@ -6,6 +6,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule }   from '@angular/forms';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
+import { AngularFireModule } from '@angular/fire'
+import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
+
 /*Components*/
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -29,6 +33,9 @@ import { FaqsAdminComponent } from './admin/faqs-admin/faqs-admin.component';
 import { APIService } from './api.service';
 import { FooterComponent } from './footer/footer.component';
 import { JoinUsComponent } from './join-us/join-us.component';
+import { FirebaseDbService } from './firebase-db.service';
+
+import { environment } from 'src/environments/environment.prod';
 
 
 @NgModule({
@@ -57,6 +64,10 @@ import { JoinUsComponent } from './join-us/join-us.component';
     HttpClientModule,
     FormsModule,
     AngularFontAwesomeModule,
+    
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+
     RouterModule.forRoot([
       {path:'',component:HomeComponent},
       {path:'projects', component: ProjectComponent},
@@ -83,7 +94,9 @@ import { JoinUsComponent } from './join-us/join-us.component';
     ])
   ],
   providers: [
-    APIService
+    APIService,
+    FirebaseDbService,
+    { provide: FirestoreSettingsToken, useValue: {} }
   ],
   bootstrap: [AppComponent]
 })
