@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { APIService } from './../api.service'
 import { News } from './news'
+import { FirebaseDbService } from '../firebase-db.service';
 
 @Component({
   selector: 'news',
@@ -9,21 +9,14 @@ import { News } from './news'
 })
 export class NewsComponent implements OnInit{
 
-  news : News[] = [];
+  news = [];
 
-  constructor(private apiService: APIService) { }
+  constructor(private firebaseDb: FirebaseDbService) { }
 
   ngOnInit(){
-    this.apiService.getNews()
-    .subscribe(
-      (response) => {
-        let data = JSON.stringify(response);
-        this.news = JSON.parse(data);
-      },
-      (error) =>{
-        console.log(error);
-      }
-    )
+    this.firebaseDb.getNews().subscribe(
+      value => this.news = value
+    );
   }
 
 

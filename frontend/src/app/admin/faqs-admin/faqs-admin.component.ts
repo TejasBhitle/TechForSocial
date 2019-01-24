@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FAQ } from 'src/app/faq/faq';
-import { APIService } from 'src/app/api.service';
+import { FAQ } from './../../faq/faq';
 import { NgForm } from '@angular/forms';
+import { FirebaseDbService } from 'src/app/firebase-db.service';
 
 @Component({
   selector: 'app-faqs-admin',
@@ -12,10 +12,10 @@ export class FaqsAdminComponent implements OnInit {
 
   isUpdateMode: boolean = false
   isWriteView$: boolean = false
-  faqs: FAQ[] = []
-  faqItem$ : FAQ = { question: '', answer: '' }
+  faqs= []
+  faqItem$ : FAQ = { key:'', question: '', answer: '' }
 
-  constructor(private apiService: APIService) { }
+  constructor(private firebaseDb: FirebaseDbService) { }
 
   ngOnInit() {
     this.fetchFAQs()
@@ -35,10 +35,7 @@ export class FaqsAdminComponent implements OnInit {
 
   onDeletePressed(faq: FAQ){
     if(!confirm("Are you sure you want to delete this FAQ ?")) return
-    this.apiService.deleteFAQ(faq).subscribe(
-      res => console.log(res), 
-      err => console.log(err)
-    )
+    this.firebaseDb.deleteFAQs(faq)
     this.goToReadView()
   }
   
@@ -50,16 +47,15 @@ export class FaqsAdminComponent implements OnInit {
 
   submitForm(form: NgForm){
     let formFAQ : FAQ = form.value
-    formFAQ.id = this.faqItem$.id
-    this.apiService.createOrUpdateFAQ(formFAQ,this.isUpdateMode)
-      .subscribe( res => console.log(res), err => console.log(err))
+    if(this.isUpdateMode) formFAQ.key = this.faqItem$.key
+    this.firebaseDb.createOrUpdateFAQs(formFAQ,this.isUpdateMode)
     this.goToReadView()
   }
 
   private fetchFAQs(){
-    this.apiService.getFaqs().subscribe( (res) => {
-      this.faqs = JSON.parse(JSON.stringify(res))
-    })
+    this.firebaseDb.getFAQs().subscribe(
+      value => this.faqs = value
+    );
   }
 
   private goToReadView(){
@@ -68,7 +64,7 @@ export class FaqsAdminComponent implements OnInit {
   }
 
   private resetFormItem(){
-    this.faqItem$ = { question: '', answer: ''}
+    this.faqItem$ = { key:'', question: '', answer: ''}
   }
 
 }

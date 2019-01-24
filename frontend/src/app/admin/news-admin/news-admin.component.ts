@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { News } from 'src/app/news/news';
-import { APIService } from 'src/app/api.service';
 import { NgForm } from '@angular/forms';
 import { FirebaseDbService } from 'src/app/firebase-db.service';
 
@@ -14,9 +13,9 @@ export class NewsAdminComponent implements OnInit {
   isUpdateMode: boolean = false
   isWriteView$: boolean = false
   news= []
-  newsItem$ : News = {text:'' }
+  newsItem$ : News = {key: '', text:'' }
 
-  constructor(private apiService: APIService, private firebaseDb: FirebaseDbService) { }
+  constructor(private firebaseDb: FirebaseDbService) { }
 
   ngOnInit() {
     this.fetchNews()
@@ -36,10 +35,7 @@ export class NewsAdminComponent implements OnInit {
 
   onDeletePressed(newsItem: News){
     if(!confirm("Are you sure you want to delete this news ?")) return
-    this.apiService.deleteNews(newsItem).subscribe(
-      res => console.log(res), 
-      err => console.log(err)
-    )
+    this.firebaseDb.deleteNews(newsItem)
     this.goToReadView()
   }
   
@@ -51,19 +47,15 @@ export class NewsAdminComponent implements OnInit {
 
   submitForm(form: NgForm){
     let formNews : News = form.value
-    /*this.apiService.createOrUpdateNews(formNews,this.isUpdateMode)
-      .subscribe( res => console.log(res), err => console.log(err))*/
-    this.firebaseDb.createNews(formNews)
+    if(this.isUpdateMode) formNews.key = this.newsItem$.key
+    this.firebaseDb.createOrUpdateNews(formNews,this.isUpdateMode)
     this.goToReadView()
   }
 
   private fetchNews(){
-    this.firebaseDb.getNews()/*.valueChanges().subscribe(
-      value => {
-        this.news = value
-        console.log(value) 
-      }
-    );*/
+    this.firebaseDb.getNews().subscribe(
+      value => this.news = value
+    );
   }
 
   private goToReadView(){
@@ -72,7 +64,7 @@ export class NewsAdminComponent implements OnInit {
   }
 
   private resetFormItem(){
-    this.newsItem$ = {text:'' }
+    this.newsItem$ = {key: '', text:'' }
   }
 
 }

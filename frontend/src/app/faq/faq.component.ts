@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { APIService } from '../api.service';
 import { FAQ } from './faq';
+import { FirebaseDbService } from '../firebase-db.service';
 
 @Component({
   selector: 'app-faq',
@@ -9,25 +9,19 @@ import { FAQ } from './faq';
 })
 export class FaqComponent implements OnInit {
 
-  faqs : FAQ[] = []
+  faqs = []
 
-  constructor(private apiService: APIService) { }
+  constructor(private firebaseDb: FirebaseDbService) { }
   isHidden1 = true;
   isHidden2 = true;
   isHidden3 = true;
   isHidden4 = true;
   isHidden5 = true;
-  ngOnInit(){
-    this.apiService.getFaqs()
-    .subscribe(
-      (response) => {
-        let data = JSON.stringify(response);
-        this.faqs = JSON.parse(data);
-      },
-      (error) =>{
-        console.log(error);
-      }
-    )
-  }
 
+  ngOnInit(){
+    this.firebaseDb.getFAQs().subscribe(
+      value => this.faqs = value
+    );
+  }
+  
 }

@@ -6,7 +6,6 @@
   <table class="table">
     <thead>
         <tr>
-          <th>Id</th>
           <th>FAQs</th>
           <th></th>
           <th></th>
@@ -14,7 +13,6 @@
     </thead>
     <tbody>
       <tr *ngFor="let faq of faqs">
-        <td>{{faq.id}}</td>
         <td>{{faq.question}} <br> {{faq.answer}}</td>
         <td>
           <button  class="btn btn-primary" 

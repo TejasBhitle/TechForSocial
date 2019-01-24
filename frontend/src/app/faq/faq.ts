@@ -1,5 +1,5 @@
 export class FAQ{
-    id? : string 
+    key? : string 
     question: string
     answer: string
 }

@@ -19,7 +19,7 @@ import { CourseComponent } from './course/course.component';
 import { ProjectComponent } from './project/project.component';
 import { PeopleComponent } from './people/people.component';
 import { PublicationComponent } from './publication/publication.component';
-import { FaqComponent } from './faq/faq.component';
+import { FaqComponent } from './faq/faq.component'
 import { NavbarComponent } from './navbar/navbar.component';
 import { AdminComponent } from './admin/admin.component';
 import { ReleasesComponent } from './releases/releases.component';
@@ -30,7 +30,6 @@ import { NewsAdminComponent } from './admin/news-admin/news-admin.component';
 import { FaqsAdminComponent } from './admin/faqs-admin/faqs-admin.component';
 
 /*Services*/
-import { APIService } from './api.service';
 import { FooterComponent } from './footer/footer.component';
 import { JoinUsComponent } from './join-us/join-us.component';
 import { FirebaseDbService } from './firebase-db.service';
@@ -94,7 +93,6 @@ import { environment } from 'src/environments/environment.prod';
     ])
   ],
   providers: [
-    APIService,
     FirebaseDbService,
     { provide: FirestoreSettingsToken, useValue: {} }
   ],
