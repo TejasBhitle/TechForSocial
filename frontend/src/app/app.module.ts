@@ -19,6 +19,7 @@ import { FaqComponent } from './faq/faq.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AdminComponent } from './admin/admin.component';
 import { ReleasesComponent } from './releases/releases.component';
+import { ProjectDetailsComponent } from './project-details/project-details.component';
 
 /*Admin components */
 import { NewsAdminComponent } from './admin/news-admin/news-admin.component';
@@ -28,6 +29,7 @@ import { FaqsAdminComponent } from './admin/faqs-admin/faqs-admin.component';
 import { APIService } from './api.service';
 import { FooterComponent } from './footer/footer.component';
 import { JoinUsComponent } from './join-us/join-us.component';
+
 
 @NgModule({
   declarations: [
@@ -47,6 +49,7 @@ import { JoinUsComponent } from './join-us/join-us.component';
     FaqsAdminComponent,
     FooterComponent,
     JoinUsComponent,
+    ProjectDetailsComponent,
   ],
   imports: [
     BrowserModule, 
@@ -57,6 +60,7 @@ import { JoinUsComponent } from './join-us/join-us.component';
     RouterModule.forRoot([
       {path:'',component:HomeComponent},
       {path:'projects', component: ProjectComponent},
+      {path:'projectdetails', component :ProjectDetailsComponent},
       {path:'people',component: PeopleComponent},
       {path:'publications', component: PublicationComponent},
       {path:'faq', component: FaqComponent},

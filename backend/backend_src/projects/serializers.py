@@ -1,11 +1,19 @@
 from rest_framework import serializers
 from .models import ActiveProject, DummyPeopleModel, Papers
 
+class PaperSerializer(serializers.ModelSerializer):
+    #project_paper = ActiveProjectSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Papers
+        fields = ('id', 'paper_title', 'paper_abstract')
+
 
 class ActiveProjectSerializer(serializers.ModelSerializer):
 
     # project_team = serializers.PrimaryKeyRelatedField(queryset=DummyPeopleModel.objects.all(), many=True)
-    project_paper = serializers.PrimaryKeyRelatedField(queryset=Papers.objects.all(), many=True)
+    #project_paper = serializers.PrimaryKeyRelatedField(queryset=Papers.objects.all(), many=True)
+    project_paper = PaperSerializer(many=True, read_only=False)
 
     class Meta:
 
@@ -22,10 +30,3 @@ class DummyPeopleModelSerializer(serializers.ModelSerializer):
         fields = ('id', 'person_name', 'project_team',)
 
 
-class PaperSerializer(serializers.ModelSerializer):
-    project_paper = ActiveProjectSerializer(many=True, read_only=True)
-
-
-    class Meta:
-        model = Papers
-        fields = ('id', 'paper_name', 'paper_abstract', 'project_paper',)

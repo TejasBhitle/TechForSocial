@@ -24,6 +24,7 @@ class ProjectCreate(generics.CreateAPIView):
 class ProjectDetail(generics.RetrieveAPIView):
     queryset = models.ActiveProject.objects.filter()
     serializer_class = ActiveProjectSerializer
+    
 
 
 class ProjectDelete(generics.DestroyAPIView):
