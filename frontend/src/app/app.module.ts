@@ -28,6 +28,7 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
 /*Admin components */
 import { NewsAdminComponent } from './admin/news-admin/news-admin.component';
 import { FaqsAdminComponent } from './admin/faqs-admin/faqs-admin.component';
+import { ProjectAdminComponent } from './admin/project-admin/project-admin.component';
 
 /*Services*/
 import { FooterComponent } from './footer/footer.component';
@@ -35,6 +36,7 @@ import { JoinUsComponent } from './join-us/join-us.component';
 import { FirebaseDbService } from './firebase-db.service';
 
 import { environment } from 'src/environments/environment.prod';
+
 
 
 @NgModule({
@@ -56,6 +58,7 @@ import { environment } from 'src/environments/environment.prod';
     FooterComponent,
     JoinUsComponent,
     ProjectDetailsComponent,
+    ProjectAdminComponent,
   ],
   imports: [
     BrowserModule, 
@@ -87,6 +90,10 @@ import { environment } from 'src/environments/environment.prod';
           {
             path: 'faqs',
             component: FaqsAdminComponent
+          },
+          {
+            path: 'projects',
+            component: ProjectAdminComponent
           },
         ]
       }

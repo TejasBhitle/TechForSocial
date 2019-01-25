@@ -1,0 +1,65 @@
+<div *ngIf="!isWriteView$">
+  <button class="button btn btn-warning"
+    (click)="onCreatePressed()">
+    Add Project
+  </button>
+  <table class="table">
+    <thead>
+        <tr>
+          <th>Projects</th>
+          <th></th>
+          <th></th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let project of projects">
+        <td>
+          {{project.name}} <br> 
+          {{project.team}} <br>
+          {{project.abstract}} <br>
+          <span *ngFor="let paper of project.paper">
+            {{paper.name}} <br>
+            {{paper.link}}
+          </span>
+        </td>
+        <td>
+          <button  class="btn btn-primary" 
+            (click)="onEditPressed(project)">
+            Edit
+          </button>
+        </td>
+        <td>
+          <button class="btn btn-danger"
+            (click)="onDeletePressed(project)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="isWriteView$">
+
+  <form #faqsForm="ngForm" (ngSubmit)="submitForm(faqsForm)">
+    <div class="form-group">
+      <label for="projectName">Projects</label>
+      <input [(ngModel)] = "projectItem$.name" class="form-control" name="name"
+      placeholder="Enter name" id="projectName" type="text">
+      
+      <input [(ngModel)] = "projectItem$.abstract" class="form-control" name="abstract"
+      placeholder="Enter abstract" id="projectAbstract" type="text">
+
+      <input [(ngModel)] = "projectItem$.team" class="form-control" name="team"
+      placeholder="Enter team members (comma separated)" id="projectTeam" type="text"/>
+
+    </div>
+
+    <button class="button btn btn-primary" type="submit">Save</button>
+
+    <button class="button btn btn-danger"
+      (click)="onCancelPressed()"> Cancel
+    </button>
+  </form>
+
+
+</div>

@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { News } from './news/news';
-import { Observable } from 'rxjs';
 
 import { map } from 'rxjs/operators'
 import { FAQ } from './faq/faq';
+import { Project } from './project/project'
 
 
 @Injectable({
@@ -61,7 +61,32 @@ export class FirebaseDbService {
   }
 
   deleteFAQs(faq: FAQ){
-    return this.afs.collection('nefaqsws').doc(faq.key).delete()
+    return this.afs.collection('faqs').doc(faq.key).delete()
+  }
+
+  getProjects(){
+    return this.afs.collection('projects').snapshotChanges()
+    .pipe(map(items => {
+      return items.map(a => {
+        const data = a.payload.doc.data();
+        const key = a.payload.doc.id;
+        return {key, ...data};
+      });
+    }));
+  }
+
+  createOrUpdateProject(project: Project, isUpdate: boolean){
+    if(!isUpdate)
+      return this.afs.collection('projects').add(project)
+    else{
+      let key = project.key
+      delete project[key]
+      return this.afs.collection('projects').doc(key).set(project)
+    }
+  }
+
+  deleteProject(project: Project){
+    return this.afs.collection('projects').doc(project.key).delete()
   }
 
 }
