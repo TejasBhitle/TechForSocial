@@ -13,7 +13,7 @@ export class ProjectAdminComponent implements OnInit {
   isUpdateMode: boolean = false
   isWriteView$: boolean = false
   projects= []
-  projectItem$ : Project = { key:'', abstract: '', name: '',team:'', paper: []}
+  projectItem$ : Project
 
   constructor(private firebaseDb: FirebaseDbService) { }
 
@@ -64,7 +64,12 @@ export class ProjectAdminComponent implements OnInit {
   }
 
   private resetFormItem(){
-    this.projectItem$ = { key:'', abstract: '', name: '',team:'', paper: []}
+    this.projectItem$ = { 
+      key:'', abstract: '', 
+      name: '',team:'',
+      index: 0, isOpen: true,
+      paper: []
+    }
   }
 
 }

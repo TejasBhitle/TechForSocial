@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseDbService } from '../firebase-db.service';
 
 @Component({
   selector: 'app-project',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectComponent implements OnInit {
 
-  constructor() { }
+  openProjects$ = []
+  closedProjects$ = []
+
+  constructor(private firebaseDb: FirebaseDbService) { }
 
   ngOnInit() {
+    this.firebaseDb.getProjects().subscribe( 
+      projects =>{
+        projects.forEach( project => {
+          if(project['isOpen'])
+            this.openProjects$.push(project)
+          else
+            this.closedProjects$.push(project)
+        })
+      })
+
   }
 
 }

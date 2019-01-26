@@ -6,6 +6,7 @@
   <table class="table">
     <thead>
         <tr>
+          <th>Index</th>
           <th>Projects</th>
           <th></th>
           <th></th>
@@ -13,6 +14,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let project of projects">
+        <td>{{project.index}}</td>
         <td>
           {{project.name}} <br> 
           {{project.team}} <br>

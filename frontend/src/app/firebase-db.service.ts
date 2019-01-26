@@ -21,7 +21,7 @@ export class FirebaseDbService {
         const data = a.payload.doc.data();
         const key = a.payload.doc.id;
         return {key, ...data};
-      });
+      }).sort( (a1,a2) => (a1["index"] < a2["index"])?-1:1 )
     }));
   }
 
@@ -46,7 +46,7 @@ export class FirebaseDbService {
         const data = a.payload.doc.data();
         const key = a.payload.doc.id;
         return {key, ...data};
-      });
+      }).sort( (a1,a2) => (a1["index"] < a2["index"])?-1:1 );
     }));
   }
 
@@ -71,7 +71,7 @@ export class FirebaseDbService {
         const data = a.payload.doc.data();
         const key = a.payload.doc.id;
         return {key, ...data};
-      });
+      }).sort( (a1,a2) => (a1["index"] < a2["index"])?-1:1 );
     }));
   }
 

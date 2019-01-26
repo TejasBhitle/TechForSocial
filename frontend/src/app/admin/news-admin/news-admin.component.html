@@ -6,6 +6,7 @@
   <table class="table">
     <thead>
         <tr>
+          <th>Index</th>
           <th>News</th>
           <th></th>
           <th></th>
@@ -13,6 +14,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let newsItem of news">
+        <td>{{newsItem.index}}</td>
         <td>{{newsItem.text}}</td>
         <td>
           <button  class="btn btn-primary" 
@@ -35,6 +37,12 @@
   <form #newsForm="ngForm" (ngSubmit)="submitForm(newsForm)">
     <div class="form-group">
       <label for="newstext">News</label>
+
+      <input [(ngModel)] = "newsItem$.index" class="form-control" name="index"
+      placeholder="Enter index" id="newsindex" type="text" aria-describedby="newsindex">
+      <small id="newsindex" class="form-text text-muted">
+        News will be ordered by index</small>
+
       <input [(ngModel)] = "newsItem$.text" class="form-control" name="text"
       placeholder="Enter text" id="newstext" type="text" aria-describedby="newsHelp">
       <small id="newsHelp" class="form-text text-muted">

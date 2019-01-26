@@ -13,7 +13,7 @@ export class NewsAdminComponent implements OnInit {
   isUpdateMode: boolean = false
   isWriteView$: boolean = false
   news= []
-  newsItem$ : News = {key: '', text:'' }
+  newsItem$ : News
 
   constructor(private firebaseDb: FirebaseDbService) { }
 
@@ -64,7 +64,7 @@ export class NewsAdminComponent implements OnInit {
   }
 
   private resetFormItem(){
-    this.newsItem$ = {key: '', text:'' }
+    this.newsItem$ = {key: '', text:'', index: 0 }
   }
 
 }

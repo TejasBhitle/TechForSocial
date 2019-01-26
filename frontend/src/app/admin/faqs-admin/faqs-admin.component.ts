@@ -13,7 +13,7 @@ export class FaqsAdminComponent implements OnInit {
   isUpdateMode: boolean = false
   isWriteView$: boolean = false
   faqs= []
-  faqItem$ : FAQ = { key:'', question: '', answer: '' }
+  faqItem$ : FAQ
 
   constructor(private firebaseDb: FirebaseDbService) { }
 
@@ -64,7 +64,7 @@ export class FaqsAdminComponent implements OnInit {
   }
 
   private resetFormItem(){
-    this.faqItem$ = { key:'', question: '', answer: ''}
+    this.faqItem$ = { key:'', question: '', answer: '', index: 0}
   }
 
 }
