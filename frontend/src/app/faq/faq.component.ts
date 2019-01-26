@@ -20,7 +20,13 @@ export class FaqComponent implements OnInit {
 
   ngOnInit(){
     this.firebaseDb.getFAQs().subscribe(
-      value => this.faqs = value
+      value => {
+        this.faqs = value.map( x => { 
+          let obj = Object.assign({},x)
+          obj["isHidden"] = true
+          return obj
+        })
+      }
     );
   }
   
