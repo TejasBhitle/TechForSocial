@@ -6,7 +6,8 @@ export interface Project{
     isOpen: boolean
     index: number
     slug: string
-    paper: Paper[]
+    keywords: []
+    papers: Paper[]
 }
 
 export interface Paper{

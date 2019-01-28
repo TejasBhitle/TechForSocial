@@ -24,6 +24,7 @@ export class ProjectComponent implements OnInit {
           else
             this.closedProjects$.push(project)
         })
+        console.log(this.openProjects$)
       })
   }
 

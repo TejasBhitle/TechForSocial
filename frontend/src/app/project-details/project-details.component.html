@@ -29,11 +29,16 @@
       <hr>
       {{project$.team}}
       <hr>
-      <h1>Papers</h1><hr>
-      <ul style="list-style-type:none">
-          <li><i class="fa fa-file" aria-hidden="true"></i> Paper 1</li><br>
-          <li><i class="fa fa-file" aria-hidden="true"></i> Paper 2</li>
-        </ul>
+      <span *ngIf="project$.papers">
+          <h1 >Papers</h1><hr>
+          <ul style="list-style-type:none">
+            <li *ngFor="let paper of project$.papers">
+              <i  class="fa fa-file" aria-hidden="true"></i> 
+              <a target="_blank" href="{{paper.url}}">{{paper.name}}</a>
+            </li>
+          </ul>
+      </span>
+      
     </div>
   </div>
 </div>

@@ -25,9 +25,12 @@
                 <div class="detail-text">
                     <h2>{{project.name}}</h2>
                     <p>{{project.abstract | shorttext}}</p>
-                    <a routerLink="/projects/{{project.slug}}">
+                    <span *ngFor="let keyword of project.keywords">
+                            <span class="badge">{{keyword}}</span>
+                    </span>
+                    <button routerLink="/projects/{{project.slug}}">
                         <span class="badge">Read More</span>
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>
@@ -71,9 +74,12 @@
             <div class="detail-text">
                 <h2>{{project.name}}</h2>
                 <p>{{project.abstract | shorttext}}</p>
-                <a routerLink="/projects/{{project.slug}}">
+                <span *ngFor="let keyword of project.keywords">
+                    <span class="badge">{{keyword}}</span>
+                </span>
+                <button routerLink="/projects/{{project.slug}}">
                     <span class="badge">Read More</span>
-                </a>
+                </button>
             </div>
         </div>
     </div>
