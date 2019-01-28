@@ -25,7 +25,6 @@ export class ProjectComponent implements OnInit {
             this.closedProjects$.push(project)
         })
       })
-
   }
 
 }

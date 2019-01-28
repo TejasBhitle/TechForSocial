@@ -13,7 +13,28 @@
         <h1>OPEN PROJECTS</h1>
     </div>
 
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div *ngFor="let project of openProjects$" 
+                class="col-md-4 project-detail-card">
+                <div class="detail-img"> 
+                    <img src="../../assets/img/proj1.jpg" alt="" 
+                    class="img-responsive" width="100%">
+                </div>
+                <div class="detail-text">
+                    <h2>{{project.name}}</h2>
+                    <p>{{project.abstract | shorttext}}</p>
+                    <a routerLink="/projects/{{project.slug}}">
+                        <span class="badge">Read More</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="content-title-underline-black"></div>
+    <!--
         <div class="row">
             <div class="col-md-2"></div>
             <div *ngFor="let project of openProjects$" class="col-md-8">
@@ -22,13 +43,15 @@
                     <div class="text pull-left">
                         <p class="text-data">
                             <span class="text-title">{{project.name}}</span>
-                            {{project.abstract}}  
-                            <a href="" routerLink="/projectdetails" class="learn-more"> .....</a>
+                            {{project.abstract | shorttext}}  
+                            <a href="" routerLink="/projectdetails{{project.slug}}" 
+                            class="learn-more"> ...</a>
                         </p>
                     </div>
                 </div>
             </div>
         </div>
+    -->
         
     <div style="text-align: center">
         <h1>CLOSED PROJECTS</h1>
@@ -47,26 +70,11 @@
             </div>
             <div class="detail-text">
                 <h2>{{project.name}}</h2>
-                <p>{{project.abstract}}
-                    <a href="">...</a>
-                </p>
-                <span class="badge">prj</span>
-                <span class="badge">keyword</span>
-                <span class="badge">text</span>
-                <span class="badge">prj</span>
+                <p>{{project.abstract | shorttext}}</p>
+                <a routerLink="/projects/{{project.slug}}">
+                    <span class="badge">Read More</span>
+                </a>
             </div>
         </div>
-        <div class="col-md-4 project-detail-card">
-            <div class="detail-img"> <img src="../../assets/img/proj1.jpg" alt="" class="img-responsive" width="100%"></div>
-            <div class="detail-text">
-                <h2>Lorem Ipsum</h2>
-                <p>Quis laboris non proident non. Amet irure sit exercitation Lorem esse nulla minim. Voluptate eu pariatur ea in culpa aute in<a href="">...</a></p>
-                <span class="badge">prj</span>
-                <span class="badge">keyword</span>
-                <span class="badge">text</span>
-                <span class="badge">prj</span>
-            </div>
-        <div class="col-md-2"></div>
     </div>
-</div>
 </div>

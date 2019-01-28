@@ -36,6 +36,7 @@ import { JoinUsComponent } from './join-us/join-us.component';
 import { FirebaseDbService } from './firebase-db.service';
 
 import { environment } from 'src/environments/environment.prod';
+import { ShortTextPipe } from './short-text.pipe';
 
 
 
@@ -59,6 +60,8 @@ import { environment } from 'src/environments/environment.prod';
     JoinUsComponent,
     ProjectDetailsComponent,
     ProjectAdminComponent,
+
+    ShortTextPipe
   ],
   imports: [
     BrowserModule, 
