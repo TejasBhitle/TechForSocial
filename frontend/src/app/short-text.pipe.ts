@@ -7,7 +7,7 @@ export class ShortTextPipe implements PipeTransform{
         if(size > text.length)
             return text
         else
-            return text.slice(0,size)
+            return text.slice(0,size) + '...'
     }
 
 }
