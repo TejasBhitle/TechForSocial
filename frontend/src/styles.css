@@ -34,7 +34,6 @@ body{
 }
 .projects{
     height: 135px;
-    margin-bottom: 37px;
     background-color: #E6E6E6;
     box-shadow: 0px 20px 10px -10px #797371;
 }
@@ -74,13 +73,11 @@ body{
 .learn-more{
     margin-top: 5px;
     /* display: block; */
-    color: #010000;
     text-decoration: none;
     cursor: pointer;
 }
 .learn-more:hover{
     text-decoration: underline;
-    color: #010000;
 }
 .joinus-wrapper{
     color: #010000;

@@ -1,16 +1,14 @@
 <h1 class="heading">Current Projects</h1>
-<div class="content-title-underline-black"></div>
-<div class="clear-float">
-    <div class="projects-wrapper col-md-8 pull-left col-sm-12">
+<div class="container-fluid clear-float">
+    <div class="projects-wrapper row">
         <div *ngFor="let project of openProjects$" 
-            class="projects clear-float">
-            <div class="image  pull-right img-responsive"></div>
-            <div class="text pull-left">
+            class="col-md-6 col-sm-12 col-lg-4">
+            <div class="projects text">
                 <p class="text-data">
                     <span class="text-title">{{project.name}}</span>
                     {{project.abstract | shorttext}}
                     <a routerLink="/project/{{project.slug}}" 
-                    class="learn-more"> .....</a>
+                    class="learn-more"> Learn more </a>
                 </p>
             </div>
         </div>
