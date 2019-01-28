@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseDbService } from '../firebase-db.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-project-details',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectDetailsComponent implements OnInit {
 
-  constructor() { }
+  project$ = {}
+  slug: string
+
+  constructor(private firebaseDb: FirebaseDbService, private route: ActivatedRoute) { 
+    this.slug = this.route.snapshot.params.slug
+  }
 
   ngOnInit() {
+    this.firebaseDb.getProject(this.slug)
+    .subscribe( item =>{
+      this.project$ = item.data()
+    })
   }
 
 }

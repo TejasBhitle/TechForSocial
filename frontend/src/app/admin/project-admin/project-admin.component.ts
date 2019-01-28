@@ -68,7 +68,7 @@ export class ProjectAdminComponent implements OnInit {
       key:'', abstract: '', 
       name: '',team:'',
       index: 0, isOpen: true,
-      paper: []
+      slug: '', paper: []
     }
   }
 

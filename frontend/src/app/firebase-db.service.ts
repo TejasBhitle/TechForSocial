@@ -75,6 +75,10 @@ export class FirebaseDbService {
     }));
   }
 
+  getProject(slug: string){
+    return this.afs.collection('projects').doc(slug).get()
+  }
+
   createOrUpdateProject(project: Project, isUpdate: boolean){
     if(!isUpdate)
       return this.afs.collection('projects').add(project)

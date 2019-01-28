@@ -5,6 +5,7 @@ export interface Project{
     team: string
     isOpen: boolean
     index: number
+    slug: string
     paper: Paper[]
 }
 

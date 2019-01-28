@@ -73,12 +73,12 @@ import { environment } from 'src/environments/environment.prod';
     RouterModule.forRoot([
       {path:'',component:HomeComponent},
       {path:'projects', component: ProjectComponent},
-      {path:'projectdetails', component :ProjectDetailsComponent},
+      {path:'projects/:slug', component :ProjectDetailsComponent},
       {path:'people',component: PeopleComponent},
       {path:'publications', component: PublicationComponent},
       {path:'faq', component: FaqComponent},
       {path:'releases', component: ReleasesComponent},
-      {
+      /*{
         path:'admin', 
         component: AdminComponent,
         data : { hide_navbar : true} ,
@@ -96,7 +96,7 @@ import { environment } from 'src/environments/environment.prod';
             component: ProjectAdminComponent
           },
         ]
-      }
+      }*/
     ])
   ],
   providers: [

@@ -3,7 +3,7 @@
        <img src="../../assets/img/proj4.jpg" alt="Project Title" id="img" >
   
         <div class="centered">
-            <h1><b>Project Title</b></h1>      
+            <h1><b>{{project$.name}}</b></h1>      
             <p>Short Description about project</p></div>
 </div>
 <br><br>
@@ -23,22 +23,13 @@
     <div class="col-sm-8">
       <hr>
       <h1>Project Overview</h1><hr>
-      <p style="width:550px">The project’s overview or project summary is a tool that allows the most important requirements for your activities to be selected in order to interpret them and take efficient decisions.
-In projects with a high activity volume and great differences in characteristics, it is useful to work with the project summary which the app provides you.
-Specifically, the Sinnaps project’s overview offers you the following information: activity name, people assigned to the activity, start and finish date, plus the current state of the activity (to do, ongoing, not done or validated), objectives, sub-tasks and planned or used resources. It also offers you a balance between what was planned and what has been consumed so you can better manage the project costs.</p>
-      <img style="width:550px;height:550px" src="../../assets/img/carousel2.jpg"><br><br>
-      <img style="width:550px;height:550px" src="../../assets/img/img1.jpg">
+      <p style="width:550px">{{project$.abstract}}</p>
       <hr>
-<h1 id="Members">Members</h1><hr>
-      
-          <ul style="list-style-type:none">
-              <li><i class="fa fa-user" aria-hidden="true"></i> Member 1</li><br>
-              <li><i class="fa fa-user" aria-hidden="true"></i> Member 2</li><br>
-              <li><i class="fa fa-user" aria-hidden="true"></i> Member 3</li>
-            </ul>
-        
-        <hr>
-      <h1 id="Publications">Publications</h1><hr>
+      <h1>Team</h1>
+      <hr>
+      {{project$.team}}
+      <hr>
+      <h1 id="Publications">Papers</h1><hr>
       <ul style="list-style-type:none">
           <li><i class="fa fa-file" aria-hidden="true"></i> Publication 1</li><br>
           <li><i class="fa fa-file" aria-hidden="true"></i> Publication 2</li>
