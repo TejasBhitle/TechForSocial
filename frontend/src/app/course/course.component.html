@@ -1,16 +1,17 @@
-<h1 class="heading">Current Projects</h1>
-<div class="container-fluid clear-float">
-    <div class="projects-wrapper row">
-        <div *ngFor="let project of openProjects$" 
-            class="col-md-6 col-sm-12 col-lg-4">
-            <div class="projects text">
-                <p class="text-data">
-                    <span class="text-title">{{project.name}}</span>
-                    {{project.abstract | shorttext}}
-                    <a routerLink="/project/{{project.slug}}" 
-                    class="learn-more"> Learn more </a>
-                </p>
+<div class="row">
+    <div class="col s12 m12 heading-custom">Current Projects</div>
+    <div *ngFor="let project of openProjects$" class="col s12 m6">
+        <div class="card card-custom">
+            <div class="card-content" style="text-align:center;">
+                <span class="card-title activator grey-text text-darken-4">
+                    {{project.name}}
+                </span>
+                {{project.abstract | shorttext}}
+            </div>
+            <div class="card-action card-action-custom">
+                <a routerLink="/project/{{project.slug}}">Read More</a>
             </div>
         </div>
     </div>
+        
 </div>

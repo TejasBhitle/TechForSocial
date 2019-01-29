@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<!-- <div class="jumbotron">
     <div class="row" style="padding-left:150px ;padding-right:150px;">
         <div class="col-sm-6">
             <img src="https://zerodha.com/static/images/kite-dashboard.png" class="img-fluid d-block" alt="kite3.0">      
@@ -7,80 +7,47 @@
             <img src="https://zerodha.com/static/images/kite-dashboard.png" class="img-fluid d-block" alt="">
         </div>      
     </div>
-</div>
-<div>
-    <div style="text-align: center">
-        <h1>OPEN PROJECTS</h1>
-    </div>
+</div> -->
+<div class="row">
+    <div class="col s12 m12 heading-custom">Open Projects</div>
 
-<div class="container-fluid">
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div *ngFor="let project of openProjects$" 
-                class="col-md-4 project-detail-card">
-                <div class="detail-img"> 
-                    <img src="../../assets/img/proj1.jpg" alt="" 
-                    class="img-responsive" width="100%">
-                </div>
-                <div class="detail-text">
-                    <h2>{{project.name}}</h2>
-                    <p>{{project.abstract | shorttext}}</p>
-                    <span *ngFor="let keyword of project.keywords">
-                            <span class="badge">{{keyword}}</span>
-                    </span>
-                    <button routerLink="/projects/{{project.slug}}">
-                        <span class="badge">Read More</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="content-title-underline-black"></div>
-    <!--
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div *ngFor="let project of openProjects$" class="col-md-8">
-                <div class="projects clear-float" >
-                    <div class="image  pull-right img-responsive"></div>
-                    <div class="text pull-left">
-                        <p class="text-data">
-                            <span class="text-title">{{project.name}}</span>
-                            {{project.abstract | shorttext}}  
-                            <a href="" routerLink="/projectdetails{{project.slug}}" 
-                            class="learn-more"> ...</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    -->
-        
-    <div style="text-align: center">
-        <h1>CLOSED PROJECTS</h1>
-    </div>
-    <div class="content-title-underline-black"></div>
-</div>
- 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div *ngFor="let project of closedProjects$" 
-            class="col-md-4 project-detail-card">
-            <div class="detail-img"> 
-                <img src="../../assets/img/proj1.jpg" alt="" 
-                class="img-responsive" width="100%">
-            </div>
-            <div class="detail-text">
-                <h2>{{project.name}}</h2>
-                <p>{{project.abstract | shorttext}}</p>
-                <span *ngFor="let keyword of project.keywords">
-                    <span class="badge">{{keyword}}</span>
+    <div *ngFor="let project of openProjects$" class="col s12 m6">
+        <div class="card card-custom">
+            <div class="card-content" style="text-align:center;">
+                <span class="card-title activator grey-text text-darken-4">
+                    {{project.name}}
                 </span>
-                <button routerLink="/projects/{{project.slug}}">
-                    <span class="badge">Read More</span>
-                </button>
+                {{project.abstract | shorttext}}
+            </div>
+            <div class="card-action card-action-custom">
+                <span *ngFor="let keyword of project.keywords">
+                    <div class="chip">{{keyword}}</div>
+                </span>
+            </div>
+            <div class="card-action card-action-custom">
+                <a routerLink="/project/{{project.slug}}">Read More</a>
+            </div>
+        </div>
+    </div>
+    <div class="col s12 m12 heading-custom">Closed Projects</div>
+
+    <div *ngFor="let project of closedProjects$" class="col s12 m6">
+        <div class="card card-custom">
+            <div class="card-content" style="text-align:center;">
+                <span class="card-title activator grey-text text-darken-4">
+                    {{project.name}}
+                </span>
+                {{project.abstract | shorttext}}
+            </div>
+            <div class="card-action card-action-custom">
+                <span *ngFor="let keyword of project.keywords">
+                    <div class="chip">{{keyword}}</div>
+                </span>
+            </div>
+            <div class="card-action card-action-custom">
+                <a routerLink="/project/{{project.slug}}">Read More</a>
             </div>
         </div>
     </div>
 </div>
+    

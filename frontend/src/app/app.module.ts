@@ -5,10 +5,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule }   from '@angular/forms';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
+//import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { AngularFireModule } from '@angular/fire'
 import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /*Components*/
 import { AppComponent } from './app.component';
@@ -38,8 +39,6 @@ import { FirebaseDbService } from './firebase-db.service';
 import { environment } from 'src/environments/environment.prod';
 import { ShortTextPipe } from './short-text.pipe';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,7 +67,7 @@ import { ShortTextPipe } from './short-text.pipe';
     NgbModule.forRoot(),
     HttpClientModule,
     FormsModule,
-    AngularFontAwesomeModule,
+    BrowserAnimationsModule,
     
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
