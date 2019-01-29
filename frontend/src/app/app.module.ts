@@ -75,7 +75,7 @@ import { ShortTextPipe } from './short-text.pipe';
     RouterModule.forRoot([
       {path:'',component:HomeComponent},
       {path:'projects', component: ProjectComponent},
-      {path:'projects/:slug', component :ProjectDetailsComponent},
+      {path:'project/:slug', component :ProjectDetailsComponent},
       {path:'people',component: PeopleComponent},
       {path:'publications', component: PublicationComponent},
       {path:'faq', component: FaqComponent},

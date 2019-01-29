@@ -1,44 +1,7 @@
-
-.container {
-    position: relative;
-    color: white;
-    padding: 0;
-  }
-  
-  /* Centered text */
-  .centered {
-    position: absolute;
-    top: 85%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  #img{
-    position: relative;    
-    /* Preserve aspet ratio */
-    min-width: 100%;
-    height: 450px;
-  }
-
-  .vertical-menu {
-    width: 300px; /* Set a width if you like */
-    left:30px;
-    position: relative;
-  }
-  
-  .vertical-menu a {
-    background-color: #eee; /* Grey background color */
-    color: black; /* Black text color */
-    display: block; /* Make the links appear below each other */
-    padding: 12px; /* Add some padding */
-    text-decoration: none; /* Remove underline from links */
-  }
-  
-  .vertical-menu a:hover {
-    background-color: #ccc; /* Dark grey background on mouse-over */
-  }
-  
-  .vertical-menu a.active {
-    background-color:#369DC8; /* Add a green color to the "active/current" link */
-    color: white;
-  }
+.heading-custom{
+  margin: 0 auto;
+  margin-top: 10px;
+  text-align: center;
+}
+.card-custom{
+}

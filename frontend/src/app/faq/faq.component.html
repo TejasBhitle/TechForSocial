@@ -1,4 +1,16 @@
-<div class="faq-wrapper">
+<div class="row">
+    <div class="col s12 m12 heading-custom">Frequently Asked Questions</div>
+    <ul class="collection">
+      <span *ngFor="let faq of faqs">
+          <li class="collection-item">
+            <div (click)="faq.isHidden = !faq.isHidden">{{faq.question}}</div>
+            <div [hidden]="faq.isHidden">{{faq.answer}}</div>
+          </li>
+      </span>
+        
+      </ul>
+</div>
+<!-- <div class="faq-wrapper">
   <h1 class="heading">Frequently Asked Questions</h1>
   <div class="content-title-underline-black big-bottom-mrg"></div>
   <span *ngFor="let faq of faqs">
@@ -14,4 +26,4 @@
         </div>
     </div>
   </span>
-</div>
+</div> -->

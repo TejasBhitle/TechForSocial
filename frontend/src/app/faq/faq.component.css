@@ -1,27 +1,5 @@
-.faq-wrapper{
-    margin: 40px 0px;
-}
-.faq-question{
-    background-color: #369DC8;
-    color: white;
-    padding: 3px 10px;
-}
-.faq-question-grey{
-    background-color: #5E5E5E;
-
-}
-.faq-panel{
-    margin: 10px 15px;
-}
-.faq-answer{
-    padding-top: 15px;
-    padding-bottom: 20px;
-    color: #369DC8;
-}
-.faq-answer-grey{
-    color: #5e5e5e;
-}
-.faq-arrowicon{
-    float: right;
-    padding-top: 5px;
+.heading-custom{
+    margin: 0 auto;
+    margin-top: 10px;
+    text-align: center;
 }
