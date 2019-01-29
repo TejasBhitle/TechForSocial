@@ -1,19 +1,17 @@
-<nav>
+<div class="navbar-fixed">
+<nav class="blue z-depth-2">
   <div class="nav-wrapper">
-    <a routerLink="/" class="brand-logo">TechForSocial</a>
+    <a routerLink="/" class="brand-logo center"><img class="logo" src="../assets/img/logo.png" style="height: 64px; width: 64px;"></a>
     <a data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    <ul class="right hide-on-med-and-down">
-      <li><a routerLink="/projects">Projects</a></li>
-      <li><a routerLink="/people">People</a></li>
-      <li><a routerLink="/publications">Publications</a></li>
-      <li><a routerLink="/faq">FAQS</a></li>
-    </ul>
   </div>
 </nav>
+</div>
 
-<ul class="sidenav" id="mobile-demo">
+<ul class="sidenav sidenav-fixed blue" id="mobile-demo">
+  <li><a routerLink="/" style="font-size: 1.5em; margin-top: 8px;">TechForSocial</a></li>
   <li><a routerLink="/projects">Projects</a></li>
   <li><a routerLink="/people">People</a></li>
   <li><a routerLink="/publications">Publications</a></li>
-  <li><a routerLink="/faq">FAQS</a></li>
+  <li><a routerLink="/faq">FAQs</a></li>
 </ul>
+
