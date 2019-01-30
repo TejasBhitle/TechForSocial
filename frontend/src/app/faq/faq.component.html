@@ -1,14 +1,15 @@
 <div class="row">
     <div class="col s12 m12 heading-custom">Frequently Asked Questions</div>
-    <ul class="collection">
-      <span *ngFor="let faq of faqs">
-          <li class="collection-item">
-            <div (click)="faq.isHidden = !faq.isHidden">{{faq.question}}</div>
-            <div [hidden]="faq.isHidden">{{faq.answer}}</div>
+      <ul class="collapsible">
+        <span *ngFor="let faq of faqs">
+          <li>
+            <div class="collapsible-header"><i class="material-icons">filter_drama</i>{{faq.question}}</div>
+            <div class="collapsible-body">
+              <span>{{faq.answer}}.</span>
+            </div>
           </li>
       </span>
-        
-      </ul>
+    </ul>
 </div>
 <!-- <div class="faq-wrapper">
   <h1 class="heading">Frequently Asked Questions</h1>

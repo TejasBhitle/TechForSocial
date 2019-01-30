@@ -1,31 +1,32 @@
 .profile_pic{
-    max-height: 200px;
-    max-width: 200px;
-    border-radius:180px;
-    position: relative;
-    margin: 0 auto;
-    top:20px;
-    left:0;right:0;
-  }
-  .intro-card{
-    padding: 0 auto;
-    margin: 0 auto;
-    margin-bottom: 24px;
-    margin-top: 50px;
-    text-align: center;
-  }
-  .intro-card-text{
-  }
-  .links-card{
-    text-align: center;
-    margin: 0 auto;
-  }
-  .link{
-    text-align: center;
-  }
-  .heading-custom{
-    margin: 0 auto;
-    margin-top: 10px;
-    text-align: center;
+  max-height: 200px;
+  max-width: 200px;
+  border-radius:180px;
+  position: relative;
+  margin: 0 auto;
+  top:20px;
+  left:0;right:0;
+}
+.intro-card{
+  padding: 0 auto;
+  margin: 0 auto;
+  margin-bottom: 24px;
+  margin-top: 24px;
+  text-align: center;
+}
+.intro-card-text{
+}
+.links-card{
+  text-align: center;
+  margin: 0 auto;
+}
+.link{
+  text-align: center;
+}
+.heading-custom{
+  margin: 0 auto;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 24px;
 }
   

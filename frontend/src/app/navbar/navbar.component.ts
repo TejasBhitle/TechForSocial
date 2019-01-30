@@ -12,7 +12,12 @@ export class NavbarComponent implements OnInit, OnDestroy {
   routerSubscription : Subscription
   showNavbar$ : boolean
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) { 
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.sidenav');
+      M.Sidenav.init(elems, null);
+    });
+  }
 
   ngOnInit() {
     this.routerSubscription = this.router.events.subscribe( 

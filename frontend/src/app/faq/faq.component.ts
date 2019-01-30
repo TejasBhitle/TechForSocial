@@ -11,7 +11,15 @@ export class FaqComponent implements OnInit {
 
   faqs = []
 
-  constructor(private firebaseDb: FirebaseDbService) { }
+  constructor(private firebaseDb: FirebaseDbService) { 
+    
+  }
+
+  onclick(){
+    alert('wow')
+    var elems = document.querySelectorAll('.collapsible');
+    M.Collapsible.init(elems, null);
+  }
 
   ngOnInit(){
     this.firebaseDb.getFAQs().subscribe(
