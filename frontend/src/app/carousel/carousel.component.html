@@ -1,6 +1,4 @@
-
-
-<div class='container-fluid carousel-wrapper'>
+<!-- <div class='container-fluid carousel-wrapper'>
   <div class='col-12'>
     <ngb-carousel *ngIf="news.length > 0">
       <ng-template ngbSlide *ngFor="let newsItem of news">
@@ -11,4 +9,9 @@
       </ng-template>
     </ngb-carousel>
   </div>
+</div> -->
+<div class="carousel carousel-slider">
+  <a *ngFor="let newsItem of news" class="carousel-item" href="#one!">
+    <img src="{{newsItem.img}}">
+  </a>
 </div>

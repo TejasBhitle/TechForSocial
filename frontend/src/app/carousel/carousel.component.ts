@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { FirebaseDbService } from '../firebase-db.service';
 @Component({
   selector: 'carousel',
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.css'],
-  providers: [ NgbCarouselConfig ]
+  providers: [ ]
 })
 export class CarouselComponent implements OnInit {
 
@@ -18,12 +17,8 @@ export class CarouselComponent implements OnInit {
   ]
   i = 0
 
-  constructor(config: NgbCarouselConfig, private firebaseDb: FirebaseDbService) {
-    // customize default values of carousels used by this component tree
-    config.interval = 4000;
-    config.wrap = true;
-    config.keyboard = false;
-    config.pauseOnHover = false;
+  constructor(private firebaseDb: FirebaseDbService) {
+    
   }
 
 

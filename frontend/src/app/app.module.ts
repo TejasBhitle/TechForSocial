@@ -5,6 +5,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule }   from '@angular/forms';
+import { OwlModule } from 'ngx-owl-carousel';
 
 import { AngularFireModule } from '@angular/fire'
 import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
@@ -68,6 +69,7 @@ import { ShortTextPipe } from './short-text.pipe';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
+    OwlModule,
     
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,

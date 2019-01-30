@@ -11,15 +11,7 @@ export class FaqComponent implements OnInit {
 
   faqs = []
 
-  constructor(private firebaseDb: FirebaseDbService) { 
-    
-  }
-
-  onclick(){
-    alert('wow')
-    var elems = document.querySelectorAll('.collapsible');
-    M.Collapsible.init(elems, null);
-  }
+  constructor(private firebaseDb: FirebaseDbService) { }
 
   ngOnInit(){
     this.firebaseDb.getFAQs().subscribe(
@@ -30,7 +22,7 @@ export class FaqComponent implements OnInit {
           return obj
         })
       }
-    );
+    )
   }
   
 }

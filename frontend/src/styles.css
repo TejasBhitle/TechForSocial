@@ -193,11 +193,6 @@ footer, body .content {
     padding-top: 15px;
     color: #484848;
 }
-
-
-.carousel-wrapper{
-    margin-top: 20px;
-}
 @media(max-width: 1199px){
     .projects{
         height: 180px;
