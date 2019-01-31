@@ -3,8 +3,10 @@
   <div *ngFor="let pub_year of pub_years_keys$" class="col s12 m12">
     
   <div class="col s12 m12 heading-custom blue-text">{{pub_year}}</div>
-  <div *ngFor="let pub of pub_years$[pub_year]"  class="col s12 m12">
-      <a target="_blank" href="{{pub.filepath}}">{{pub.name}}</a>
-  </div>
+  <ol>
+    <li *ngFor="let pub of pub_years$[pub_year]"  class="col s12 m12">
+        <a target="_blank" href="{{pub.filepath}}">{{pub.name}}</a>
+    </li>
+  </ol>
   </div>
 </div>
