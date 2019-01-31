@@ -2,11 +2,19 @@
   <div class=" row col s12 m12 heading-custom blue-text">Publications</div>
   <div *ngFor="let pub_year of pub_years_keys$" class="col s12 m12">
     
-  <div class="col s12 m12 heading-custom blue-text">{{pub_year}}</div>
-  <ol>
-    <li *ngFor="let pub of pub_years$[pub_year]"  class="col s12 m12">
-        <a target="_blank" href="{{pub.filepath}}">{{pub.name}}</a>
-    </li>
-  </ol>
+  <div class="card intro-card col s12 m12">
+        <div class="card-content">
+            <span class="card-title">{{pub_year}}</span>
+            
+              <ol class="intro-card-text">
+                <li *ngFor="let pub of pub_years$[pub_year]"  class="col s12 m12">
+                  <a target="_blank" href="{{pub.filepath}}">{{pub.name}}</a>
+                </li>
+              </ol>
+            
+        </div>
+  </div>
+  
+  
   </div>
 </div>
