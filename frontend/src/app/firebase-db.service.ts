@@ -93,4 +93,15 @@ export class FirebaseDbService {
     return this.afs.collection('projects').doc(project.key).delete()
   }
 
+  getPublications(){
+    return this.afs.collection('publications').snapshotChanges()
+    .pipe(map(items => {
+      return items.map(a => {
+        const data = a.payload.doc.data();
+        const key = a.payload.doc.id;
+        return {key, ...data};
+      })
+    }));
+  }
+
 }
