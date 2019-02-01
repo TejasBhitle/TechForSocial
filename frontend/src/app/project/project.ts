@@ -7,6 +7,7 @@ export class Project{
     index: number
     slug: string
     keywords: []
+    logo: string
     papers: Paper[]
 }
 

@@ -35,6 +35,7 @@ export class ProjectDetailsComponent implements OnInit, OnDestroy {
       project.slug = data["slug"]
       project.team = data["team"]
       project.keywords = data["keywords"]
+      project.logo = data["logo"]
       this.project$ = project
       this.showSpinner = false
       this.subscription.unsubscribe()

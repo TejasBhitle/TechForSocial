@@ -1,6 +1,9 @@
 <div class="row">
     <div class="col s12 m8 offset-m2">
       <div class="card card-custom">
+        <div class="card-image">
+            <img src="{{project$.logo}}">
+        </div>
 
         <div class="card-content" style="text-align:center;">
 
@@ -32,7 +35,7 @@
           </span>
       </div>
       <div class="card-content" *ngIf="project$.papers">
-        Papers:
+        Papers/Patents:
         <ul style="list-style-type:none">
           <li *ngFor="let paper of project$.papers">
             <i  class="fa fa-file" aria-hidden="true"></i> 
