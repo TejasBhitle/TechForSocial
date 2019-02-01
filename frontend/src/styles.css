@@ -1,8 +1,16 @@
+footer, body .content {
+  padding-left: 299px;
+}
+
+@media only screen and (max-width : 992px) {
+  footer, body .content {
+    padding-left: 0;
+  }
+}
+
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.css";
-@import "~owl.carousel/dist/assets/owl.carousel.css";
-@import "~owl.carousel/dist/assets/owl.theme.default.css";
-body{
+/*@import "~bootstrap/dist/css/bootstrap.css";*/
+/*body{
     font-family: 'Work Sans', sans-serif;
     font-size: 18px;
     line-height: 22px;
@@ -16,7 +24,6 @@ body{
     font-size: 40px;
     font-weight: 700;
     line-height: 35px;
-    /* margin: 0px 0px 20px 70px; */
     padding: 0;
     display: block;
     text-align: center;
@@ -30,7 +37,6 @@ body{
 }
 .projects-wrapper{
     margin: 0px 30px 30px 30px;
-    /* width: 78%; */
 }
 .projects{
     height: 135px;
@@ -72,7 +78,6 @@ body{
 }
 .learn-more{
     margin-top: 5px;
-    /* display: block; */
     text-decoration: none;
     cursor: pointer;
 }
@@ -81,7 +86,6 @@ body{
 }
 .joinus-wrapper{
     color: #010000;
-    /* width: 20%; */
     background-color: #E6E6E6;
     margin:  45px 30px 20px 0px;
     height: 480px;
@@ -114,7 +118,6 @@ body{
     display: table;
 }
 
-/*Nav Section*/
 .nav-wrapper{
     display: inline-block;
     width: 100%;
@@ -125,7 +128,6 @@ body{
     height: 75px;
     position: fixed;
     z-index: 999;
-    /* margin-bottom: 20px !important;    */
 }
 .nav-wrapper,
 .nav-wrapper .nav-details{
@@ -182,7 +184,6 @@ body{
 }
 .description-image{
     width: 36%;
-    /*background-image: url("C:\Users\ARTI\angularProj\tech\src\app\description\picture.PNG");*/
     height: 100%;
     background-repeat: no-repeat;
 }
@@ -192,13 +193,6 @@ body{
     padding-top: 15px;
     color: #484848;
 }
-
-/*Carousel section*/
-
-.carousel-wrapper{
-    margin-top: 20px;
-}
-/*media queries*/
 @media(max-width: 1199px){
     .projects{
         height: 180px;
@@ -309,7 +303,6 @@ body{
 }
 
 
-/* GENERAL PADDING MARGIN SECTION */
 .content-title-underline-white{
     width: 150px;
     height: 5px;
@@ -362,3 +355,4 @@ body{
     background-color: white;
     color: #369DC8;
 }
+*/

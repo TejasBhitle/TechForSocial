@@ -1,44 +1,45 @@
-<div style=" overflow-x: hidden"><hr>
-<div class="container">
-       <img src="../../assets/img/proj4.jpg" alt="Project Title" id="img" >
-  
-        <div class="centered">
-            <h1><b>{{project$.name}}</b></h1>      
-            <p>Short Description about project</p></div>
-</div>
-<br><br>
 <div class="row">
-    <div class="col-sm-4">
-    <div class="vertical-menu">
-      <hr>
-        <a href="#" class="active">In this Project</a>
-        <a href="#">Members</a>
-        <a href="#">Publications</a>
-        <hr>
-        <b>Project Contact:</b>
-        <br><br>Team Head
-        <br><br><i class="fa fa-envelope" aria-hidden="true"></i> abc@gmail.com
+    <div class="col s12 m8 offset-m2">
+      <div class="card card-custom">
+
+        <div class="card-content" style="text-align:center;">
+
+        <div *ngIf="showSpinner" class="spinner-wrapper-custom">
+          <div class="s12 m12 spinner-custom preloader-wrapper small active">
+              <div class="spinner-layer spinner-blue-only">
+                  <div class="circle-clipper left">
+                  <div class="circle"></div>
+                  </div>
+                  <div class="gap-patch">
+                  <div class="circle"></div>
+                  </div>
+                  <div class="circle-clipper right">
+                  <div class="circle"></div>
+                  </div>
+              </div>
+              </div>
+          </div>
+            
+          <span class="card-title activator grey-text text-darken-4">
+              {{project$.name}}
+          </span>
+          {{project$.abstract}}
       </div>
-    </div>
-    <div class="col-sm-8">
-      <hr>
-      <h1>Project Overview</h1><hr>
-      <p style="width:550px">{{project$.abstract}}</p>
-      <hr>
-      <h1>Team</h1>
-      <hr>
-      {{project$.team}}
-      <hr>
-      <span *ngIf="project$.papers">
-          <h1 >Papers</h1><hr>
-          <ul style="list-style-type:none">
-            <li *ngFor="let paper of project$.papers">
-              <i  class="fa fa-file" aria-hidden="true"></i> 
-              <a target="_blank" href="{{paper.url}}">{{paper.name}}</a>
-            </li>
-          </ul>
-      </span>
-      
-    </div>
+
+      <div class="card-action card-action-custom">
+          <span *ngFor="let keyword of project$.keywords">
+              <div class="chip">{{keyword}}</div>
+          </span>
+      </div>
+      <div class="card-content" *ngIf="project$.papers">
+        Papers:
+        <ul style="list-style-type:none">
+          <li *ngFor="let paper of project$.papers">
+            <i  class="fa fa-file" aria-hidden="true"></i> 
+            <a target="_blank" href="{{paper.url}}">{{paper.name}}</a>
+          </li>
+        </ul>
+      </div>
+      <div class="card-content">Team:<br>{{project$.team}}</div>
+      </div>
   </div>
-</div>

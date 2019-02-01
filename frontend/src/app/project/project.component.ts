@@ -1,20 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FirebaseDbService } from '../firebase-db.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-project',
   templateUrl: './project.component.html',
   styleUrls: ['./project.component.css']
 })
-export class ProjectComponent implements OnInit {
+export class ProjectComponent implements OnInit, OnDestroy {
 
   openProjects$ = []
   closedProjects$ = []
+  subscription : Subscription
+  showSpinner: boolean = false
 
   constructor(private firebaseDb: FirebaseDbService) { }
 
   ngOnInit() {
-    this.firebaseDb.getProjects().subscribe( 
+    this.showSpinner = true
+    this.subscription = this.firebaseDb.getProjects().subscribe( 
       projects =>{
         this.openProjects$ = []
         this.closedProjects$ = []
@@ -24,8 +28,15 @@ export class ProjectComponent implements OnInit {
           else
             this.closedProjects$.push(project)
         })
-        console.log(this.openProjects$)
+        this.showSpinner = false
+        this.subscription.unsubscribe()
       })
   }
+
+  ngOnDestroy(){
+    if(this.subscription)
+      this.subscription.unsubscribe()
+  }
+
 
 }

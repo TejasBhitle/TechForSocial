@@ -5,10 +5,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule }   from '@angular/forms';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { OwlModule } from 'ngx-owl-carousel';
 
 import { AngularFireModule } from '@angular/fire'
 import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 /*Components*/
 import { AppComponent } from './app.component';
@@ -38,8 +40,6 @@ import { FirebaseDbService } from './firebase-db.service';
 import { environment } from 'src/environments/environment.prod';
 import { ShortTextPipe } from './short-text.pipe';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,7 +68,8 @@ import { ShortTextPipe } from './short-text.pipe';
     NgbModule.forRoot(),
     HttpClientModule,
     FormsModule,
-    AngularFontAwesomeModule,
+    BrowserAnimationsModule,
+    OwlModule,
     
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
@@ -76,7 +77,7 @@ import { ShortTextPipe } from './short-text.pipe';
     RouterModule.forRoot([
       {path:'',component:HomeComponent},
       {path:'projects', component: ProjectComponent},
-      {path:'projects/:slug', component :ProjectDetailsComponent},
+      {path:'project/:slug', component :ProjectDetailsComponent},
       {path:'people',component: PeopleComponent},
       {path:'publications', component: PublicationComponent},
       {path:'faq', component: FaqComponent},

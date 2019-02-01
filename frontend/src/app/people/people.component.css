@@ -1,219 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.css";
-
-body{
-    font-family: 'Roboto', 'sans-serif';
-    font-size: 18px;
-    line-height: 22px;
-    color: #369DC8;
-    max-width: 1920px;
-    margin: 0 auto;
-    padding: 0;
-    background-color: #ffffff;
+.profile_pic{
+  max-height: 200px;
+  max-width: 200px;
+  border-radius:180px;
+  position: relative;
+  margin: 0 auto;
+  top:20px;
+  left:0;right:0;
 }
-.heading{
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 35px;
-    margin: 20px 0 20px 0px;
-    padding: 0;
-    display: block;
-    /* color: #342000; */
+.intro-card{
+  padding: 0 auto;
+  margin: 0 auto;
+  margin-bottom: 24px;
+  margin-top: 24px;
+  text-align: center;
 }
-.pull-left{
-    float: left;
+.intro-card-text{
 }
-.pull-right{
-    float: right;
+.links-card{
+  text-align: center;
+  margin: 0 auto;
 }
-.clear-float{
-    overflow: auto;
+.link{
+  text-align: center;
 }
-.clear-float::after {
-    content: "";
-    clear: both;
-    display: table;
+.heading-custom{
+  margin: 0 auto;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 24px;
 }
-.inbetween-margin{
-    margin-top: 20px;
-}
-/*Nav Section*/
-.nav-wrapper{
-    display: inline-block;
-    width: 100%;
-   font-weight: 500;
-    line-height: 75px;
-    background: #ffffff;
-    color: #010000;
-    height: 75px;
-    position: fixed;
-    z-index: 999;
-    
-}
-.nav-wrapper,
-.nav-wrapper .nav-details{
-    margin: 0;
-    padding: 0px;
-}
-.nav-wrapper ul li{
-    display: inline;
-    margin: 0 10px;
-}
-.nav-wrapper .nav-details li a{
-    font-size: 18px;
-    text-align: center;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #ffffff;
-    color: #010000;
-}
-.nav-wrapper .nav-details li a:hover{
-    background-color: #71716F;
-    padding: 10px;
-    border-radius: 15px;
-    text-decoration-line: none;
-    color: #ffffff;
-}
-.logo{
-    margin-left: 20px;
-    margin-right: 350px;
-    text-transform: uppercase;
-    background-color: #369DC8;
-    color: #ffffff;
-    border-radius: 100%;
-    line-height: 50px;
-    padding: 7px;
-    margin-top: 7px;
-}   
-
-/* Founder Section */
-.intro{
-    text-align: center;
-}
-.founder-align{
-    margin: 0 50px; 
-    
-}
-.founder-heading{
-    display: block;
-    background-color:  #369DC8;
-    color: #ffffff;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    border-radius: 10px;
-    text-transform: uppercase;
-    margin: 0 auto; 
-    width: 95%;
-}
-.founder-image{
-    z-index: 99;
-    left: 0;
-    right: 0;
-    margin: 10px auto;
-    width: 240px;
-    height: 240px;
-    border-radius: 240px;
-    box-shadow: 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12), 0 5px 5px -3px rgba(0,0,0,.2);
-}
-.founder-name{
-    color: #369DC8;
-    font-size: 35px;
-    text-align: center;
-    font-weight: 400;
-    margin-bottom: 10px;
-}
-.founder-bio{
-    margin: 20px 50px;
-    font-weight: 500;
-}
-.founder-title{
-    color: #000000;
-    text-transform: uppercase;
-    margin-top: 10px;
-}
-.bio-content{
-    justify-content: center;
-}
-.founder-links{
-    margin-bottom: 30px;
-}
-.bio-content{
-    color: #767676;
-}
-.link-list a{
-     color: #767676;
-}
-.student-images{
-    margin: 0 auto;
-    text-align: center;
-}
-.student-title{
-    text-transform: uppercase;
-    color: #369DC8;
-    font-size: 25px;
-    text-align: center;
-    font-weight: 500;
-    margin: 30px auto;
-}
-.student-name{
-        color: #369DC8;
-        font-size: 25px;
-        text-align: center;
-        font-weight: 400;
-        margin-bottom: 10px;
-}
-
-@media(max-width: 1199px){
-    .founder-align{
-        margin: 0 30px; 
-    }
-    .founder-heading{
-        margin: 0 20px; 
-        width: 95%;
-    }
-    .founder-name{
-        font-size: 30px;
-    }
-    .founder-title{
-        font-size: 25px;
-    }
-    
-}
-@media (min-width: 768px) and (max-width: 991px){
-    .founder-name{
-        font-size: 25px;
-    }
-    .student-title,
-    .founder-title{
-        font-size: 20px;
-    }
-    body{
-        font-size: 15px;
-    }
-    
-}
-@media (min-width: 350px) and  (max-width: 767px ){
-    .founder-name{
-        font-size: 25px;
-    }
-    .student-title,
-    .founder-title{
-        font-size: 20px;
-    }
-    body{
-        font-size: 15px;
-    }
-}
-@media (max-width: 343px){
-    .founder-name{
-        font-size: 20px;
-    }
-    .student-title,
-    .founder-title{
-        font-size: 18px;
-    }
-    body{
-        font-size: 15px;
-    }
-}
+  

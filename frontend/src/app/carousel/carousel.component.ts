@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FirebaseDbService } from '../firebase-db.service';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'carousel',
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.css'],
-  providers: [ NgbCarouselConfig ]
+  providers: [ ]
 })
-export class CarouselComponent implements OnInit {
+export class CarouselComponent implements OnInit, OnDestroy {
 
   news = []
   carousel_images_rel_paths = [
@@ -17,18 +17,12 @@ export class CarouselComponent implements OnInit {
     'assets/img/carousel4.jpg',
   ]
   i = 0
+  subscription : Subscription
 
-  constructor(config: NgbCarouselConfig, private firebaseDb: FirebaseDbService) {
-    // customize default values of carousels used by this component tree
-    config.interval = 4000;
-    config.wrap = true;
-    config.keyboard = false;
-    config.pauseOnHover = false;
-  }
-
+  constructor(private firebaseDb: FirebaseDbService) { }
 
   ngOnInit() {
-    this.firebaseDb.getNews().subscribe(
+    this.subscription = this.firebaseDb.getNews().subscribe(
       value => {
         this.news = value.map( x => { 
           let obj = Object.assign({},x)
@@ -36,8 +30,16 @@ export class CarouselComponent implements OnInit {
           this.i++
           return obj
         })
+        this.subscription.unsubscribe()
       }
     );
   }
+
+  ngOnDestroy(){
+    if(this.subscription)
+      this.subscription.unsubscribe()
+  }
+
+  
 
 }

@@ -1,31 +1,21 @@
-.publication-wrapper{
-    padding: 0 50px;
-}
-.publication-heading-border{
-    border-right: solid 2px black;
-
-}
-.publication-heading-wrapper{
-    padding: 5px;
+.heading-custom{
+    margin: 0 auto;
+    margin-top: 10px;
     text-align: center;
+    font-size: 24px;
 }
-.publication-year-text{
-    color: black;
-    letter-spacing: 0.5px;
+.intro-card{
+  padding: 0px 0px 40px 0px;
+  margin: 0 auto;
+  margin-bottom: 12px;
+  margin-top: 12px;
 }
-hr{
-    height:2px;border:none;color:#333;background-color:#333;
+.card-title{
+  text-align: center;
 }
-.publication-title{
-    display: block;
-    background-color:  #369DC8;
-    color: #ffffff;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    border-radius: 10px;
-    text-transform: uppercase;
-    margin: 35px auto; 
-    margin-bottom: 15px;
-    width: 95%;
+.spinner-wrapper-custom{
+  text-align: center;
+}
+.spinner-custom{
+  display: inline-block;
 }

@@ -1,6 +1,4 @@
-
-
-<div class='container-fluid carousel-wrapper'>
+<!-- <div class='container-fluid carousel-wrapper'>
   <div class='col-12'>
     <ngb-carousel *ngIf="news.length > 0">
       <ng-template ngbSlide *ngFor="let newsItem of news">
@@ -11,4 +9,25 @@
       </ng-template>
     </ngb-carousel>
   </div>
+</div> -->
+
+<owl-carousel
+     [options]="{items: 3, dots: false, navigation: false}"
+     [items]="images"
+     [carouselClasses]="['owl-theme', 'row', 'sliding']">
+     <div class="item" *ngFor="let image of carousel_images_rel_paths;let i = index">
+         <div class="thumbnail-image" ></div>
+     </div>
+ </owl-carousel>
+
+<!-- <div class="carousel carousel-slider">
+  <a *ngFor="let newsItem of news" class="carousel-item" href="#one!">
+    <img src="{{newsItem.img}}">
+  </a>
 </div>
+<div class="carousel carousel-slider">
+  <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/800/400/food/1"></a>
+  <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/800/400/food/2"></a>
+  <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/800/400/food/3"></a>
+  <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/800/400/food/4"></a>
+</div> -->

@@ -1,33 +1,17 @@
- <nav *ngIf="showNavbar$"
- style="background-color: #369DC8" class="navbar navbar-expand-lg navbar-light ">
-  <img style="height: 60px; width: 80px" src="../../assets/img/TforS.png">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-      <div class="col-md-2"></div>
-    <div class="collapse navbar-collapse" class="container teal borderYtoX" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link"  routerLink="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"  routerLink="/projects">Projects</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link"  routerLink="/people">People</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"  routerLink="/publications">Publications</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"  routerLink="/faq">FAQS</a>
-          </li>
-          <!--
-          <li class="nav-item">
-            <a class="nav-link"  routerLink="/releases">Releases</a>
-          </li>
-          -->
-       </ul>
-    </div>
-  </nav>
+<div class="navbar-fixed">
+<nav class="blue z-depth-2">
+  <div class="nav-wrapper">
+    <a routerLink="/" class="brand-logo center"><img class="logo" src="../assets/img/logo.png" style="height: 64px; width: 64px;"></a>
+    <a data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+  </div>
+</nav>
+</div>
+
+<ul class="sidenav sidenav-fixed blue" id="mobile-demo">
+  <li><a class="sidenav-close" routerLink="/" style="font-size: 1.5em; margin-top: 8px;">TechForSocial</a></li>
+  <li><a class="sidenav-close" routerLink="/projects">Projects</a></li>
+  <li><a class="sidenav-close" routerLink="/people">People</a></li>
+  <li><a class="sidenav-close" routerLink="/publications">Publications</a></li>
+  <li><a class="sidenav-close" routerLink="/faq">FAQs</a></li>
+</ul>
 
