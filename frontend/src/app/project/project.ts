@@ -1,4 +1,4 @@
-export interface Project{
+export class Project{
     key? : string
     name: string
     abstract: string
