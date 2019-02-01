@@ -4,7 +4,6 @@
 
         <div class="card-content" style="text-align:center;">
 
-
         <div *ngIf="showSpinner" class="spinner-wrapper-custom">
           <div class="s12 m12 spinner-custom preloader-wrapper small active">
               <div class="spinner-layer spinner-blue-only">
@@ -26,7 +25,7 @@
           </span>
           {{project$.abstract}}
       </div>
-      
+
       <div class="card-action card-action-custom">
           <span *ngFor="let keyword of project$.keywords">
               <div class="chip">{{keyword}}</div>
