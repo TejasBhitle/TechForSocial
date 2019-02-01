@@ -12,10 +12,12 @@ export class ProjectComponent implements OnInit, OnDestroy {
   openProjects$ = []
   closedProjects$ = []
   subscription : Subscription
+  showSpinner: boolean = false
 
   constructor(private firebaseDb: FirebaseDbService) { }
 
   ngOnInit() {
+    this.showSpinner = true
     this.subscription = this.firebaseDb.getProjects().subscribe( 
       projects =>{
         this.openProjects$ = []
@@ -26,6 +28,7 @@ export class ProjectComponent implements OnInit, OnDestroy {
           else
             this.closedProjects$.push(project)
         })
+        this.showSpinner = false
         this.subscription.unsubscribe()
       })
   }

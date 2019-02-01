@@ -3,5 +3,9 @@
   margin-top: 10px;
   text-align: center;
 }
-.card-custom{
+.spinner-wrapper-custom{
+    text-align: center;
+}
+.spinner-custom{
+    display: inline-block;
 }

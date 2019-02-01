@@ -1,5 +1,22 @@
 <div class="row">
     <div class="col s12 m12 heading-custom  blue-text">Frequently Asked Questions</div>
+
+    <div *ngIf="showSpinner" class="spinner-wrapper-custom">
+    <div class="s12 m12 spinner-custom preloader-wrapper small active">
+        <div class="spinner-layer spinner-blue-only">
+            <div class="circle-clipper left">
+            <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+            <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+            <div class="circle"></div>
+            </div>
+        </div>
+        </div>
+    </div>
+
     <ul class="collapsible col s12 m8 offset-m2">
         <li *ngFor="let faq of faqs">
           <div class="collapsible-header ">

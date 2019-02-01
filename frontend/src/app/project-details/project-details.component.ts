@@ -13,15 +13,18 @@ export class ProjectDetailsComponent implements OnInit, OnDestroy {
   project$ = {}
   slug: string
   subscription: Subscription
+  showSpinner: boolean = false
 
   constructor(private firebaseDb: FirebaseDbService, private route: ActivatedRoute) { 
     this.slug = this.route.snapshot.params.slug
   }
 
   ngOnInit() {
+    this.showSpinner = true
     this.subscription = this.firebaseDb.getProject(this.slug)
     .subscribe( item =>{
       this.project$ = item.data()
+      this.showSpinner = false
       this.subscription.unsubscribe()
     })
   }

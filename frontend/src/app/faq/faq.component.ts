@@ -12,10 +12,12 @@ export class FaqComponent implements OnInit, OnDestroy {
 
   faqs = []
   subscription : Subscription
+  showSpinner: boolean = false
 
   constructor(private firebaseDb: FirebaseDbService) { }
 
   ngOnInit(){
+    this.showSpinner=true
     this.subscription = this.firebaseDb.getFAQs().subscribe(
       value => {
         this.faqs = value.map( x => { 
@@ -23,6 +25,7 @@ export class FaqComponent implements OnInit, OnDestroy {
           obj["isHidden"] = true
           return obj
         })
+        this.showSpinner=false
         this.subscription.unsubscribe()
       }
     )

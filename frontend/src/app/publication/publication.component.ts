@@ -12,10 +12,12 @@ export class PublicationComponent implements OnInit, OnDestroy {
   subscription: Subscription
   pub_years$ = {}
   pub_years_keys$ = []
+  showSpinner: boolean = false
 
   constructor(private firebaseDb: FirebaseDbService) { }
 
   ngOnInit() {
+    this.showSpinner = true
     this.subscription = this.firebaseDb.getPublications().subscribe(
       publications => {
         this.pub_years$ = {}
@@ -26,6 +28,7 @@ export class PublicationComponent implements OnInit, OnDestroy {
           this.pub_years$[pub['year']].push(pub)
         }
         this.pub_years_keys$ = Object.keys(this.pub_years$)
+        this.showSpinner = false
         this.subscription.unsubscribe()
       }
     )
