@@ -17,28 +17,26 @@ export class FaqComponent implements OnInit, OnDestroy {
   constructor(private firebaseDb: FirebaseDbService) { }
 
   ngOnInit(){
-    this.showSpinner=true
-    this.subscription = this.firebaseDb.getFAQs().subscribe(
-      value => {
-        this.faqs = value.map( x => { 
-          let obj = Object.assign({},x)
-          obj["isHidden"] = true
-          return obj
-        })
-        this.showSpinner=false
-        this.subscription.unsubscribe()
-
-        document.addEventListener('DOMContentLoaded', function() {
-          var elems = document.querySelectorAll('.collapsible');
-          var instances = M.Collapsible.init(elems, {});
-        });
-      }
-    )
-
-    document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('.collapsible');
-      var instances = M.Collapsible.init(elems, {});
-    });
+    let localfaqs = sessionStorage.getItem('faqs')
+    if(!localfaqs){
+      this.showSpinner=true
+      this.subscription = this.firebaseDb.getFAQs().subscribe(
+        value => {
+          this.faqs = value.map( x => { 
+            let obj = Object.assign({},x)
+            obj["isHidden"] = true
+            return obj
+          })
+          this.showSpinner=false
+          this.subscription.unsubscribe()
+          sessionStorage.setItem('faqs',JSON.stringify(this.faqs))
+        }
+      )
+    }
+    else{
+      this.faqs = JSON.parse(localfaqs)
+    }
+    
   }
 
   ngOnDestroy(){

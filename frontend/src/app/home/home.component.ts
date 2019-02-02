@@ -16,17 +16,24 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(private firebaseDb: FirebaseDbService) { }
 
   ngOnInit() {
-    this.showSpinner = true
-    this.subscription = this.firebaseDb.getProjects().subscribe( 
-      projects =>{
-        this.openProjects$ = []
-        projects.forEach( project => {
-          if(project['isOpen'])
-            this.openProjects$.push(project)
+    let localOpenProjects = sessionStorage.getItem('openProjects')
+    if(!localOpenProjects){
+      this.showSpinner = true
+      this.subscription = this.firebaseDb.getProjects().subscribe( 
+        projects =>{
+          this.openProjects$ = []
+          projects.forEach( project => {
+            if(project['isOpen'])
+              this.openProjects$.push(project)
+          })
+          this.showSpinner = false
+          this.subscription.unsubscribe()
+          sessionStorage.setItem('openProjects', JSON.stringify(this.openProjects$))
         })
-        this.showSpinner = false
-        this.subscription.unsubscribe()
-      })
+    }
+    else{
+      this.openProjects$ = JSON.parse(localOpenProjects)
+    }
   }
 
   ngOnDestroy(){

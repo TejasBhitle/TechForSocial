@@ -21,25 +21,33 @@ export class ProjectDetailsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.showSpinner = true
-    this.subscription = this.firebaseDb.getProject(this.slug)
-    .subscribe( item =>{
-      let data = item.data()
-      let project = new Project() 
-      project.key = data["key"]
-      project.name = data["name"]
-      project.abstract = data["abstract"]
-      project.index = data["index"]
-      project.isOpen = data["isOpen"]
-      project.papers = data["papers"]
-      project.slug = data["slug"]
-      project.team = data["team"]
-      project.keywords = data["keywords"]
-      project.logo = data["logo"]
-      this.project$ = project
-      this.showSpinner = false
-      this.subscription.unsubscribe()
-    })
+    let localProject = sessionStorage.getItem('project/'+this.slug)
+    if(!localProject){
+      this.showSpinner = true
+      this.subscription = this.firebaseDb.getProject(this.slug)
+      .subscribe( item =>{
+        let data = item.data()
+        let project = new Project() 
+        project.key = data["key"]
+        project.name = data["name"]
+        project.abstract = data["abstract"]
+        project.index = data["index"]
+        project.isOpen = data["isOpen"]
+        project.papers = data["papers"]
+        project.slug = data["slug"]
+        project.team = data["team"]
+        project.keywords = data["keywords"]
+        project.logo = data["logo"]
+        this.project$ = project
+        this.showSpinner = false
+        this.subscription.unsubscribe()
+        sessionStorage.setItem('project/'+this.slug,JSON.stringify(project))
+      })
+    }
+    else{
+      this.project$ = JSON.parse(localProject)
+    }
+    
   }
   
   ngOnDestroy(){
