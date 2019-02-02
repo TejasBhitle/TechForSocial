@@ -19,6 +19,9 @@
 
     <div *ngFor="let project of openProjects$" class="col s12 m6">
         <div class="card card-custom">
+            <div class="card-image">
+                <img src="{{project.logo}}">
+            </div>
             <div class="card-content" style="text-align:center;">
                 <span class="card-title activator grey-text text-darken-4">
                     {{project.name}}
@@ -55,6 +58,9 @@
 
     <div *ngFor="let project of closedProjects$" class="col s12 m6">
         <div class="card card-custom">
+            <div class="card-image">
+                <img src="{{project.logo}}">
+            </div>
             <div class="card-content" style="text-align:center;">
                 <span class="card-title activator grey-text text-darken-4">
                     {{project.name}}

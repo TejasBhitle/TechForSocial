@@ -23,14 +23,8 @@ import { PeopleComponent } from './people/people.component';
 import { PublicationComponent } from './publication/publication.component';
 import { FaqComponent } from './faq/faq.component'
 import { NavbarComponent } from './navbar/navbar.component';
-import { AdminComponent } from './admin/admin.component';
 import { ReleasesComponent } from './releases/releases.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
-
-/*Admin components */
-import { NewsAdminComponent } from './admin/news-admin/news-admin.component';
-import { FaqsAdminComponent } from './admin/faqs-admin/faqs-admin.component';
-import { ProjectAdminComponent } from './admin/project-admin/project-admin.component';
 
 /*Services*/
 import { FooterComponent } from './footer/footer.component';
@@ -52,14 +46,10 @@ import { ShortTextPipe } from './short-text.pipe';
     PublicationComponent,
     FaqComponent,
     NavbarComponent,
-    AdminComponent,
     ReleasesComponent,
-    NewsAdminComponent,
-    FaqsAdminComponent,
     FooterComponent,
     JoinUsComponent,
     ProjectDetailsComponent,
-    ProjectAdminComponent,
 
     ShortTextPipe
   ],
@@ -81,26 +71,7 @@ import { ShortTextPipe } from './short-text.pipe';
       {path:'people',component: PeopleComponent},
       {path:'publications', component: PublicationComponent},
       {path:'faq', component: FaqComponent},
-      {path:'releases', component: ReleasesComponent},
-      /*{
-        path:'admin', 
-        component: AdminComponent,
-        data : { hide_navbar : true} ,
-        children: [
-          {
-            path: 'news',
-            component: NewsAdminComponent
-          },
-          {
-            path: 'faqs',
-            component: FaqsAdminComponent
-          },
-          {
-            path: 'projects',
-            component: ProjectAdminComponent
-          },
-        ]
-      }*/
+      {path:'releases', component: ReleasesComponent}
     ])
   ],
   providers: [
