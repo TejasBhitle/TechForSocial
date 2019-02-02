@@ -17,7 +17,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NewsComponent } from './news/news.component';
 import { CarouselComponent } from './carousel/carousel.component';
-import { CourseComponent } from './course/course.component';
 import { ProjectComponent } from './project/project.component';
 import { PeopleComponent } from './people/people.component';
 import { PublicationComponent } from './publication/publication.component';
@@ -37,7 +36,6 @@ import { ShortTextPipe } from './short-text.pipe';
 @NgModule({
   declarations: [
     AppComponent,
-    CourseComponent,
     CarouselComponent,
     NewsComponent,
     HomeComponent,
