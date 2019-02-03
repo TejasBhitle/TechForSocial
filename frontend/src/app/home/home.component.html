@@ -29,18 +29,20 @@
         </div>
     </div>
 
-    <div *ngFor="let project of openProjects$" class="col s12 m6">
+    <div *ngFor="let project of openProjects$; let i = index" class="col s12 m6">
         <div class="card card-custom">
             <div class="card-content" style="text-align:center;">
                 <span class="card-title activator grey-text text-darken-4">
                     {{project.name}}
                 </span>
-                {{project.abstract | shorttext}}
+                {{project.description}}
             </div>
             <div class="card-action card-action-custom">
                 <a routerLink="/project/{{project.slug}}">Read More</a>
             </div>
         </div>
+
+        <div *ngIf="i%2==1" class="col s12 m12"  style="height: 1px;"></div>
     </div>
         
 </div>

@@ -8,6 +8,7 @@ export class Project{
     slug: string
     keywords: []
     logo: string
+    description: string
     papers: Paper[]
 }
 
