@@ -6,7 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule }   from '@angular/forms';
 import { OwlModule } from 'ngx-owl-carousel';
-
+import { Ng2CarouselamosModule } from 'ng2-carouselamos';
 import { AngularFireModule } from '@angular/fire'
 import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -32,6 +32,7 @@ import { FirebaseDbService } from './firebase-db.service';
 
 import { environment } from 'src/environments/environment.prod';
 import { ShortTextPipe } from './short-text.pipe';
+import { CarouselFinalComponent } from './carousel-final/carousel-final.component';
 
 @NgModule({
   declarations: [
@@ -48,8 +49,10 @@ import { ShortTextPipe } from './short-text.pipe';
     FooterComponent,
     JoinUsComponent,
     ProjectDetailsComponent,
+    
+    ShortTextPipe,
 
-    ShortTextPipe
+    CarouselFinalComponent
   ],
   imports: [
     BrowserModule, 
@@ -58,7 +61,7 @@ import { ShortTextPipe } from './short-text.pipe';
     FormsModule,
     BrowserAnimationsModule,
     OwlModule,
-    
+    Ng2CarouselamosModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
 
