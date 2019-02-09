@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FirebaseDbService } from '../firebase-db.service';
 import { Subscription } from 'rxjs';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-publication',
@@ -14,9 +15,10 @@ export class PublicationComponent implements OnInit, OnDestroy {
   pub_years_keys$ = []
   showSpinner: boolean = false
 
-  constructor(private firebaseDb: FirebaseDbService) { }
+  constructor(private firebaseDb: FirebaseDbService,private title:Title) { }
 
   ngOnInit() {
+    this.title.setTitle("TechForSocial - Publications")
     let localPublicationsKeys = sessionStorage.getItem('publications-keys')
     let localPublicationYears = sessionStorage.getItem('publication-years')
     if(!localPublicationsKeys){

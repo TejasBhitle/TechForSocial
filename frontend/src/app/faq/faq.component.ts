@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FAQ } from './faq';
 import { FirebaseDbService } from '../firebase-db.service';
 import { Subscription } from 'rxjs';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-faq',
@@ -14,9 +15,10 @@ export class FaqComponent implements OnInit, OnDestroy {
   subscription : Subscription
   showSpinner: boolean = false
 
-  constructor(private firebaseDb: FirebaseDbService) { }
+  constructor(private firebaseDb: FirebaseDbService,private title :Title) { }
 
   ngOnInit(){
+    this.title.setTitle("TechForSocial - faq")
     let localfaqs = sessionStorage.getItem('faqs')
     if(!localfaqs){
       this.showSpinner=true

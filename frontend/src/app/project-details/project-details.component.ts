@@ -3,6 +3,7 @@ import { FirebaseDbService } from '../firebase-db.service';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Project } from '../project/project';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-project-details',
@@ -16,11 +17,12 @@ export class ProjectDetailsComponent implements OnInit, OnDestroy {
   subscription: Subscription
   showSpinner: boolean = false
 
-  constructor(private firebaseDb: FirebaseDbService, private route: ActivatedRoute) { 
+  constructor(private firebaseDb: FirebaseDbService, private route: ActivatedRoute,private title:Title) { 
     this.slug = this.route.snapshot.params.slug
   }
 
   ngOnInit() {
+    this.title.setTitle("TechForSocial - "+this.slug)
     let localProject = sessionStorage.getItem('project/'+this.slug)
     if(!localProject){
       this.showSpinner = true

@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FirebaseDbService } from '../firebase-db.service';
 import { Subscription } from 'rxjs';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -13,9 +14,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   showSpinner: boolean = false
   subscription: Subscription
 
-  constructor(private firebaseDb: FirebaseDbService) { }
+  constructor(private firebaseDb: FirebaseDbService,private title :Title) { }
 
   ngOnInit() {
+    this.title.setTitle("TechForSocial - Technology For Social Good")
     let localOpenProjects = sessionStorage.getItem('openProjects')
     if(!localOpenProjects){
       this.showSpinner = true

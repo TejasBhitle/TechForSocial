@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FirebaseDbService } from '../firebase-db.service';
 import { Subscription } from 'rxjs';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-project',
@@ -14,9 +15,10 @@ export class ProjectComponent implements OnInit, OnDestroy {
   subscription : Subscription
   showSpinner: boolean = false
 
-  constructor(private firebaseDb: FirebaseDbService) { }
+  constructor(private firebaseDb: FirebaseDbService, private title :Title) { }
 
   ngOnInit() {
+    this.title.setTitle("TechForSocial - Projects which transformed Everything")
     let localOpenProjects = sessionStorage.getItem('openProjects')
     let localClosedProjects = sessionStorage.getItem('closedProjects')
     if(!localClosedProjects){
