@@ -14,8 +14,10 @@
   margin-top: 24px;
   text-align: center;
 }
+.intro-card-text-drk {
+  text-align: justify;
+}
 .fa-icon-custom{
-  display:inline-block;
   text-align: center;
   vertical-align: bottom;
 }
