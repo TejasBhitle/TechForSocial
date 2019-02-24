@@ -32,6 +32,7 @@ import { FirebaseDbService } from './firebase-db.service';
 
 import { environment } from 'src/environments/environment.prod';
 import { ShortTextPipe } from './short-text.pipe';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -48,8 +49,8 @@ import { ShortTextPipe } from './short-text.pipe';
     FooterComponent,
     JoinUsComponent,
     ProjectDetailsComponent,
-
-    ShortTextPipe
+    ShortTextPipe,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule, 
@@ -69,7 +70,9 @@ import { ShortTextPipe } from './short-text.pipe';
       {path:'people',component: PeopleComponent},
       {path:'publications', component: PublicationComponent},
       {path:'faq', component: FaqComponent},
-      {path:'releases', component: ReleasesComponent}
+      {path:'releases', component: ReleasesComponent},
+      {path:'not-found', component:PageNotFoundComponent},
+      {path:'**',redirectTo:'not-found'}
     ])
   ],
   providers: [
