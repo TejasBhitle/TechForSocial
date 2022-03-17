@@ -6,14 +6,25 @@
         <img class="profile_pic mdl-shadow--4dp"  src="../assets/img/drk-pic.jpg"/>
         <div class="card-content">
             <span class="card-title"><b>Dr. Dhananjay Kalbande</b></span>
+
+            <div *ngIf="showSpinner" class="spinner-wrapper-custom">
+                <div class="s12 m12 spinner-custom preloader-wrapper small active">
+                    <div class="spinner-layer spinner-blue-only">
+                        <div class="circle-clipper left">
+                        <div class="circle"></div>
+                        </div>
+                        <div class="gap-patch">
+                        <div class="circle"></div>
+                        </div>
+                        <div class="circle-clipper right">
+                        <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <p class="intro-card-text-drk">
-                Currently a Professor, Head(Computer Engineering) and Dean(Industry Relations) at Sardar Patel Institute of Technology. 
-                My interests include Soft computing (Neural Networks, Fuzzy Logic),Computer Network, Human Machine Interaction Decision making 
-                and business Intelligence, Mobile application development for social cause, ICT for semi rural development for social cause. 
-                I have authored four books namely Graphical User Interface(Pareen Publications), MIS(Pareen Publications), Human Machine 
-                Interaction(Wiley Publications) and Digital Forensic(Wiley Publications). 
-                Skinzy is the brainchild of mine which has been turned into reality with the help of Dr. Uday Khopkar who is Dermatologist by profession. 
-                Skinzy's flagship product "DermaPhoto" is an AI based mobile application that is able to detect skin diseases.
+                {{introtext}}
             </p>
         </div>
         <div class="card-action links-card">

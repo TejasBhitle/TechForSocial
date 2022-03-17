@@ -104,4 +104,19 @@ export class FirebaseDbService {
     }));
   }
 
+  
+  getFounderIntro(){
+    console.log("getFounderIntro() called")
+    return this.afs.collection('people').doc('founder').get();
+    
+    // .snapshotChanges()
+    // .pipe(map(items => {
+    //   return items.map(a => {
+    //     const data = a.payload.doc.data();
+    //     console.log(data);
+    //     return data;
+    //   });
+    // }));
+  }
+
 }
